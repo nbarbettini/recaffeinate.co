@@ -1,0 +1,37 @@
+baseurl = "http://recaffeinate.co"
+languageCode = "en-us"
+title = "Recaffeinate - the blog of Nate Barbettini"
+theme = "hugo-steam-theme"
+#disqusShortname = "spf13"
+paginate = 5
+
+[params]
+
+	title = "<span style='color: #999'>recaffei</span><span style='color: #444'>nate</span>"
+	subtitle = "the blog of Nate Barbettini"
+	copyright = "All rights reserved."
+
+	# You can choose between green, orange, red and blue.
+	themeColor = "orange"
+	# Enable Google Analytics be inserting your tracking code
+	googleAnalytics = ""
+
+	# To provide some metadata for search engines and the about section in the footer
+	# feel free to add a few information about you and your website.
+	name = "Nate Barbettini"
+	bio = "Full-stack developer and technology enthusiast. California-born, Texas-raised."
+	description = "A blog about technology and development."
+	twitter = "nbarbettini"
+	github = "nbarbettini"
+
+	# Enable a comment system
+	# You can choose between Disqus or Google Plus by setting comments
+	# to disqus or googleplus. For using Disqus you need to enter your
+	# shortname in disqusShortname at the top of the configs.
+	comments = "disqus"
+
+	# Customize or translate the strings
+	keepReadingStr = "Keep reading"
+	backtotopStr = "Back to top"
+	shareStr = "Share"
+	pageNotFoundTitle = "404 - Page not found"
