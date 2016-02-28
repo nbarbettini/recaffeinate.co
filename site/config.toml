@@ -1,4 +1,4 @@
-baseurl = "http://recaffeinate.co"
+baseurl = "http://recaffeinate.co/"
 languageCode = "en-us"
 title = "Recaffeinate - the blog of Nate Barbettini"
 theme = "hugo-steam-theme"
