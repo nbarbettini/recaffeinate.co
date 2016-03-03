@@ -1,0 +1,54 @@
+==================================================================
+https://keybase.io/nbarbettini
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://recaffeinate.co
+  * I am nbarbettini (https://keybase.io/nbarbettini) on keybase.
+  * I have a public key ASB65ej-Js6sQqxeKsnk9lqycKW-wNXmesd81G_irmaUyAo
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "0101ceb8809694b0a2b9ce1e6b79018d4423de56762eb16044e5ab8f1abf99cafa520a",
+            "host": "keybase.io",
+            "kid": "01207ae5e8fe26ceac42ac5e2ac9e4f65ab270a5bec0d5e67ac77cd46fe2ae6694c80a",
+            "uid": "0c447615fd7454c62abfba0487520819",
+            "username": "nbarbettini"
+        },
+        "service": {
+            "hostname": "recaffeinate.co",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "client": {
+        "name": "keybase.io go client",
+        "version": "1.0.8"
+    },
+    "ctime": 1456781376,
+    "expire_in": 504576000,
+    "merkle_root": {
+        "ctime": 1456781311,
+        "hash": "fb9cb02ee9c03dd5a41f2f801e28199591b8fcd5d4ced73232d937f941771cbcb0354dff9d99fb5468700e2a728f88c9f2b5b99a10b57fc756531062a312e2b5",
+        "seqno": 397863
+    },
+    "prev": "f7827524b73e07b0fb0711f08663384dc79729a15b8762082d9fc4db982a1c7b",
+    "seqno": 20,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+g6Rib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgeuXo/ibOrEKsXirJ5PZasnClvsDV5nrHfNRv4q5mlMgKp3BheWxvYWTFAvl7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTAxY2ViODgwOTY5NGIwYTJiOWNlMWU2Yjc5MDE4ZDQ0MjNkZTU2NzYyZWIxNjA0NGU1YWI4ZjFhYmY5OWNhZmE1MjBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwN2FlNWU4ZmUyNmNlYWM0MmFjNWUyYWM5ZTRmNjVhYjI3MGE1YmVjMGQ1ZTY3YWM3N2NkNDZmZTJhZTY2OTRjODBhIiwidWlkIjoiMGM0NDc2MTVmZDc0NTRjNjJhYmZiYTA0ODc1MjA4MTkiLCJ1c2VybmFtZSI6Im5iYXJiZXR0aW5pIn0sInNlcnZpY2UiOnsiaG9zdG5hbWUiOiJyZWNhZmZlaW5hdGUuY28iLCJwcm90b2NvbCI6Imh0dHA6In0sInR5cGUiOiJ3ZWJfc2VydmljZV9iaW5kaW5nIiwidmVyc2lvbiI6MX0sImNsaWVudCI6eyJuYW1lIjoia2V5YmFzZS5pbyBnbyBjbGllbnQiLCJ2ZXJzaW9uIjoiMS4wLjgifSwiY3RpbWUiOjE0NTY3ODEzNzYsImV4cGlyZV9pbiI6NTA0NTc2MDAwLCJtZXJrbGVfcm9vdCI6eyJjdGltZSI6MTQ1Njc4MTMxMSwiaGFzaCI6ImZiOWNiMDJlZTljMDNkZDVhNDFmMmY4MDFlMjgxOTk1OTFiOGZjZDVkNGNlZDczMjMyZDkzN2Y5NDE3NzFjYmNiMDM1NGRmZjlkOTlmYjU0Njg3MDBlMmE3MjhmODhjOWYyYjViOTlhMTBiNTdmYzc1NjUzMTA2MmEzMTJlMmI1Iiwic2Vxbm8iOjM5Nzg2M30sInByZXYiOiJmNzgyNzUyNGI3M2UwN2IwZmIwNzExZjA4NjYzMzg0ZGM3OTcyOWExNWI4NzYyMDgyZDlmYzRkYjk4MmExYzdiIiwic2Vxbm8iOjIwLCJ0YWciOiJzaWduYXR1cmUifaNzaWfEQLB09GfWEUxfFc60AmEVlZwh9MFhfv0kfdqfn8kmUDP+etZ5mbgiwjpytnWuWQZUS6VeSj6iln1jfmJvTh9KFguoc2lnX3R5cGUgo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/nbarbettini
+
+==================================================================
