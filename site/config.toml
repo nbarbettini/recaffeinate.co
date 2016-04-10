@@ -7,7 +7,7 @@ paginate = 5
 
 [params]
 
-	title = "<span style='color: #999'>recaffei</span><span style='color: #444'>nate</span> <img src='img/coffee.png' style='width: 35px;'>"
+	title = "<span style='color: #999'>recaffei</span><span style='color: #444'>nate</span> <img src='/img/coffee.png' style='width: 35px;'>"
 	subtitle = "the blog of Nate Barbettini"
 	copyright = "All rights reserved."
 
@@ -35,3 +35,8 @@ paginate = 5
 	backtotopStr = "Back to top"
 	shareStr = "Share"
 	pageNotFoundTitle = "404 - Page not found"
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+  series = "series"
