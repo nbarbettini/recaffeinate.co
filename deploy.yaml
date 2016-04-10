@@ -1,0 +1,3 @@
+default:
+  bucket: 'recaffeinate.co'
+  root: 'site/public'
