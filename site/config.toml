@@ -7,7 +7,7 @@ paginate = 5
 
 [params]
 
-	title = "<span style='color: #999'>recaffei</span><span style='color: #444'>nate</span>"
+	title = "<span style='color: #999'>recaffei</span><span style='color: #444'>nate</span> <img src='img/coffee.png' style='width: 35px;'>"
 	subtitle = "the blog of Nate Barbettini"
 	copyright = "All rights reserved."
 
