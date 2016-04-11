@@ -2,8 +2,7 @@
 date        = "2016-04-10T16:30:57-07:00"
 title       = "Asynchronous uppercase at scale"
 description = "HELLO, WORLD?"
-draft       = true
-slug        = "shoutcloud-dot-net"
+slug        = "async-uppercase-at-scale"
 categories  = ".NET"
 tags        = ["async", "fun"]
 +++
