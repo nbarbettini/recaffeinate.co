@@ -3,8 +3,8 @@ date        = "2016-04-10T16:30:57-07:00"
 title       = "Asynchronous uppercase at scale"
 description = "HELLO, WORLD?"
 slug        = "async-uppercase-at-scale"
-categories  = ".NET"
-tags        = ["async", "fun"]
+categories  = "code"
+tags        = ["async", "dotnet", "fun"]
 +++
 
 [shoutcloud.io](http://shoutcloud.io/) is a hilarious parody of software-as-a-service offerings that provides All Caps as a Service. If you aren't happy with the uppercasing function built into your language of choice, you can make an (absolutely spurious) HTTP request to `API.SHOUTCLOUD.IO/V1/SHOUT` and get back a shoutier version of any string.
