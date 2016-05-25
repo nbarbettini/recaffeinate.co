@@ -2,7 +2,7 @@ baseurl = "http://recaffeinate.co/"
 languageCode = "en-us"
 title = "Recaffeinate - the blog of Nate Barbettini"
 theme = "hugo-steam-theme"
-#disqusShortname = "spf13"
+disqusShortname = "recaffeinate"
 paginate = 5
 
 [params]
