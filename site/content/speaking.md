@@ -20,11 +20,6 @@ I'd love to speak to your group or conference. Feel free to reach out on [Twitte
 
 ## Upcoming Talks
 
-#### JavaScript: A Very Short Introduction
-[The Road to Code](https://generalassemb.ly/education/the-road-to-code/san-francisco/24396) (San Francisco, CA -- free event!)
-
-Monday, May 16th, 2016 - 6:00 PM PDT
-
 #### Token Authentication in ASP.NET Core
 [Kansas City Developer Conference](http://www.kcdc.info/) (Kansas City, MO)
 
@@ -34,3 +29,11 @@ Friday, June 24th, 2016 - 10:00 AM CDT
 [Music City Code](http://www.musiccitycode.com/schedule/designing-beautiful-rest-apis-with-asp-net-core) (Nashville, TN)
 
 Friday, August 19th, 2016 - 10:00 AM CDT
+
+## Past Talks
+
+#### JavaScript: A Very Short Introduction
+[The Road to Code](https://generalassemb.ly/education/the-road-to-code/san-francisco/24396)
+Monday, May 16th, 2016 - San Francisco, CA
+
+(slides coming soon!)
