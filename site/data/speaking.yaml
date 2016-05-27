@@ -1,0 +1,9 @@
+---
+  upcoming:
+    -
+      name: "JavaScript: A very! short introduction"
+      date: Monday, May 16th, 2016
+      location: San Francisco, CA
+      slides:
+    -
+      name: "Test"
