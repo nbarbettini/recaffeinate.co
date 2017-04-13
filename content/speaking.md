@@ -17,5 +17,3 @@ I'd love to speak to your group or conference. Feel free to reach out on [Twitte
 * Full-stack C# and JavaScript
 * Open-source .NET
 
-
-{{% talks %}}

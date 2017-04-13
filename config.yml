@@ -7,6 +7,8 @@ params:
   description: "The blog and website of Nate Barbettini"
   googleAnalyticsTrackingId: ""
   navLinks:
+    - title: "Speaking"
+      url: "/speaking"
     - title: "Twitter"
       url: "https://twitter.com/nbarbettini"
     - title: "Github"
