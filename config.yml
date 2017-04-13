@@ -1,0 +1,21 @@
+baseurl: "https://www.recaffeinate.com/"
+languageCode: "en-us"
+metaDataFormat: "yaml"
+title: "<span style='color: #999'>recaffei</span><span style='color: #444'>nate</span> <img src='/img/coffee.png' style='width: 35px;'>"
+disqusShortname: "recaffeinate"
+params:
+  description: "The personal blog and website of Nate Barbettini"
+  googleAnalyticsTrackingId: ""
+  navLinks:
+    - title: "Twitter"
+      url: "https://twitter.com/nbarbettini"
+    - title: "Github"
+      url: "https://github.com/nbarbettini"
+    - title: "Talks"
+      url: "https://speakerdeck.com/nbarbettini"
+    - title: "Email"
+      url: "mailto:nathanaelb@gmail.com"
+author:
+  name: "Randall Degges"
+  bio: "Author, teacher, and full-stack developer. California-born, Texas-raised."
+  email: "nathanaelb@gmail.com"
