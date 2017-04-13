@@ -1,9 +1,9 @@
-+++
-date = "2016-05-10T11:42:20-07:00"
-title = "Speaking"
-description = "Upcoming talks"
-menu = "main"
-+++
+---
+date: "2016-05-10T11:42:20-07:00"
+title: "Speaking"
+description: "Upcoming talks"
+menu: "main"
+---
 
 I love presenting to technical (and non-technical!) audiences. There's no better way to truly understand something than to teach it to someone else.
 
