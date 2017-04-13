@@ -4,7 +4,7 @@ metaDataFormat: "yaml"
 title: "<span style='color: #999'>recaffei</span><span style='color: #444'>nate</span> <img src='/img/coffee.png' style='width: 35px;'>"
 disqusShortname: "recaffeinate"
 params:
-  description: "The personal blog and website of Nate Barbettini"
+  description: "The blog and website of Nate Barbettini"
   googleAnalyticsTrackingId: ""
   navLinks:
     - title: "Twitter"
@@ -16,6 +16,6 @@ params:
     - title: "Email"
       url: "mailto:nathanaelb@gmail.com"
 author:
-  name: "Randall Degges"
+  name: "Nate Barbettini"
   bio: "Author, teacher, and full-stack developer. California-born, Texas-raised."
   email: "nathanaelb@gmail.com"
