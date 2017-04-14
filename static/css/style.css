@@ -1,7 +1,40 @@
 a {
   text-decoration: none;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
+
+a, a:visited {color: #ff9d00;}
+a:focus, a:hover {color: #d88500;}
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Open Sans", sans-serif;
+}
+
+.blog-title {
+  margin-bottom: 0;
+}
+
+.blog-subtitle {
+  margin-bottom: 0;
+  font-family: "Raleway";
+}
+
+nav ul {
+  list-style-type: none;
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+.content {
+  display: block;
+}
+
+.post {
+  position: relative;
+  width: 80%;
+  margin: 4rem auto;
 }
