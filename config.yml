@@ -8,6 +8,7 @@ params:
   subtitle: "by Nate Barbettini"
   description: "the blog and website of Nate Barbettini"
   googleAnalyticsTrackingId: ""
+  keepReading: "Keep reading »"
   navLinks:
     - title: "Speaking"
       url: "/speaking"

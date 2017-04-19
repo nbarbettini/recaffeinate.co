@@ -1,7 +1,7 @@
 ---
 date: "2016-02-28T13:33:03-08:00"
 title: "About"
-menu: "main"
+hide: true
 ---
 
 ## California-born, Texas-raised.

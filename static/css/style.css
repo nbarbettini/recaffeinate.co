@@ -1,3 +1,22 @@
+body {
+  color: #3A4145;
+  font-family: serif;
+}
+
+.container {
+  width: 80%;
+  margin: 4rem auto;
+}
+
+nav ul {
+  list-style-type: none;
+  font-family: sans-serif;
+}
+
+nav ul li {
+  display: inline-block;
+}
+
 a {
   text-decoration: none;
   -webkit-transition: all 0.2s;
@@ -9,7 +28,7 @@ a, a:visited {color: #ff9d00;}
 a:focus, a:hover {color: #d88500;}
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Open Sans", sans-serif;
+  font-family: sans-serif;
 }
 
 .blog-title {
@@ -21,20 +40,27 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Raleway";
 }
 
-nav ul {
-  list-style-type: none;
-}
-
-nav ul li {
-  display: inline-block;
-}
-
-.content {
-  display: block;
-}
-
 .post {
   position: relative;
   width: 80%;
   margin: 4rem auto;
+  font-size: 1.1em;
+}
+
+.post-title {
+  font-size: 2em;
+  letter-spacing: -1px;
+}
+
+.post-title a {
+  color: #4A4A4A;
+}
+
+.post-title a:hover {
+  color: black;
+}
+
+.keep-reading {
+  text-transform: uppercase;
+  font-family: sans-serif;
 }
