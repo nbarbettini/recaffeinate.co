@@ -1,6 +1,6 @@
 body {
   color: #3A4145;
-  font-family: serif;
+  font-family: 'Merriweather', serif;
 }
 
 .container {
@@ -10,7 +10,7 @@ body {
 
 nav ul {
   list-style-type: none;
-  font-family: sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 nav ul li {
@@ -24,11 +24,14 @@ a {
   transition: all 0.2s;
 }
 
+p, ul {
+}
+
 a, a:visited {color: #ff9d00;}
 a:focus, a:hover {color: #d88500;}
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .blog-title {
@@ -37,7 +40,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .blog-subtitle {
   margin-bottom: 0;
-  font-family: "Raleway";
 }
 
 .post {
@@ -45,6 +47,8 @@ h1, h2, h3, h4, h5, h6 {
   width: 80%;
   margin: 4rem auto;
   font-size: 1.1em;
+  padding-bottom: 20px;
+  border-bottom: #EBF2F6 1px solid;
 }
 
 .post-title {
@@ -62,5 +66,4 @@ h1, h2, h3, h4, h5, h6 {
 
 .keep-reading {
   text-transform: uppercase;
-  font-family: sans-serif;
 }
