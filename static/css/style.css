@@ -22,6 +22,7 @@ a {
   -webkit-transition: all 0.2s;
   -o-transition: all 0.2s;
   transition: all 0.2s;
+  cursor: pointer;
 }
 
 p, ul {
@@ -47,8 +48,30 @@ h1, h2, h3, h4, h5, h6 {
   width: 80%;
   margin: 4rem auto;
   font-size: 1.1em;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
   border-bottom: #EBF2F6 1px solid;
+}
+
+.post:after {
+    display: block;
+    content: "";
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    margin-left: -5px;
+    background: url('/img/coffee.png') 0 0 no-repeat;
+    background-size: 16px;
+    box-shadow: #FFF 0 0 0 6px;
+    opacity: 0.5;
+    -webkit-filter: grayscale(80%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(80%);
+}
+
+.post footer {
+  color: #999;
+  /*font-family: 'Open Sans', sans-serif;*/
 }
 
 .post-title {
