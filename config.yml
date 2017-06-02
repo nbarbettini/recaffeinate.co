@@ -10,16 +10,16 @@ params:
   googleAnalyticsTrackingId: ""
   keepReading: "read more..."
   navLinks:
-    - title: "Speaking"
-      url: "/speaking"
-    - title: "Twitter"
-      url: "https://twitter.com/nbarbettini"
-    - title: "Github"
-      url: "https://github.com/nbarbettini"
-    - title: "Talks"
-      url: "https://speakerdeck.com/nbarbettini"
-    - title: "Email"
-      url: "mailto:nathanaelb@gmail.com"
+    - title: About
+      url: /about
+    - title: Speaking
+      url: /speaking
+    - title: Twitter
+      url: https://twitter.com/nbarbettini
+    - title: Github
+      url: https://github.com/nbarbettini
+    - title: Talks
+      url: https://speakerdeck.com/nbarbettini
 author:
   name: "Nate Barbettini"
   bio: "Author, teacher, and full-stack developer. California-born, Texas-raised."

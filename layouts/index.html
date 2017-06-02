@@ -19,7 +19,7 @@
                       <div class="seven columns">
                         posted on <time datetime="{{ .Date.Format "January 02, 2006" }}">{{ .Date.Format "January 02, 2006" }}</time> by {{ .Site.Author.name }}
                       </div>
-                      <div class="five columns">
+                      <div class="five columns text-right">
                         {{ if .Truncated }}
                         <a href="{{ .Permalink }}">{{ $.Site.Params.keepReading }}</a> ({{ trim (partial "time-estimate.html" .) "\n" }})
                         {{ end }}
