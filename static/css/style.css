@@ -4,7 +4,7 @@ body {
 }
 
 .container {
-  width: 60%;
+  max-width: 780px;
   margin: 4rem auto;
 }
 
