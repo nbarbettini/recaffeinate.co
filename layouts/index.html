@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  {{ partial "head.html" . }}
+  <body>
+    <div class="container">
+      {{ partial "header.html" . }}
+      <div class="row">
+        <div class="twelve columns">
+          {{ $paginator := .Paginate .Data.Pages.ByDate.Reverse }}
+          {{ range $paginator.Pages }}
+              {{ if not .Params.hide }}
+              <article class="post">
+                  <header>
+                      <h1 class="post-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+                      <span class="text-light">
+                        <time datetime="{{ .Date.Format "January 02, 2006" }}">{{ .Date.Format "January 02, 2006" }}</time>
+                      </span>
+                  </header>
+                  <section class="post-content">{{ .Summary }}</section>
+                  <footer>
+                    <div class="text-right">
+                      {{ if .Truncated }}
+                      <a href="{{ .Permalink }}">{{ $.Site.Params.keepReading }}</a> ({{ trim (partial "time-estimate.html" .) "\n" }})
+                      {{ end }}
+                    </div>
+                  </footer>
+              </article>
+              <hr class="divider">
+              {{ end }}
+          {{ end }}
+        </div>
+      </div>
+      <div class="row">
+        {{ partial "footer.html" . }}
+      </div>
+    </div>
+  </body>
+</html>

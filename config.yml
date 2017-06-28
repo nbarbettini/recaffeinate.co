@@ -1,0 +1,23 @@
+baseurl: https://www.recaffeinate.com/
+languageCode: en-us
+metaDataFormat: yaml
+title: recaffeinate
+disqusShortname: recaffeinate
+params:
+  stylizedTitle: "<span style='color: #999'>recaffei</span><span style='color: #444'>nate</span> <img src='/img/coffee.png' style='width: 35px;'>"
+  description: the blog and website of Nate Barbettini
+  googleAnalyticsTrackingId: ""
+  keepReading: read more...
+  navLinks:
+    - title: About
+      url: /about
+    - title: Talks
+      url: https://speakerdeck.com/nbarbettini
+    - title: Github
+      url: https://github.com/nbarbettini
+    - title: Twitter
+      url: https://twitter.com/nbarbettini
+author:
+  name: Nate Barbettini
+  bio: Author, teacher, and full-stack developer. Microsoft MVP '17. California-born, Texas-raised.
+  email: nathanaelb@gmail.com

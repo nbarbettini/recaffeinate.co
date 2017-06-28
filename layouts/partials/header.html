@@ -1,0 +1,18 @@
+<header class="page-header">
+  <div class="row">
+    <div class="six columns">
+      {{ with .Site.Params.stylizedTitle }}
+      <h1 class="blog-title"><a href="{{ $.Site.BaseURL }}">{{ . | safeHTML }}</a></h1>
+      {{ end }}
+    </div>
+    <div class="six columns">
+      <nav>
+        <ul class="nav-links">
+          {{ range $link := $.Site.Params.navLinks }}
+            <li><a href="{{ $link.url }}" hreflang="{{ $.Site.LanguageCode }}" media="all" title="{{ $.Site.Title }} - {{ $link.title }}" type="text/html">{{ lower $link.title }}</a></li>
+          {{ end }}
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
