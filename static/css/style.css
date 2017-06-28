@@ -62,8 +62,8 @@ h1, h2, h3, h4, h5, h6 {
   color: #999;
 }
 
-.post-excerpt {
-  text-align: justify;
+.post-content {
+  font-size: 1.1em;
 }
 
 hr.divider {
@@ -119,4 +119,10 @@ h1.post-title {
   left: 2px;
   padding: 1px;
   width: 22px;
+}
+
+.headshot {
+  width: 140px;
+  margin-right: 15px;
+  margin-left: 5px;
 }
