@@ -13,4 +13,4 @@ develop:
 deploy: build
 	aws s3 sync public/ s3://www.recaffeinate.co --acl public-read --delete
 	aws configure set preview.cloudfront true
-	aws cloudfront create-invalidation --distribution-id foobar --paths '/*'
+	aws cloudfront create-invalidation --distribution-id E2HWCYCWSIKLXE --paths '/*'
