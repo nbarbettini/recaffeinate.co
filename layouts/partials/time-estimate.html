@@ -1,6 +1,4 @@
-{{ $time := div .WordCount 250 }}
-{{ if le $time 1 }}
-about 1 minute
-{{ else }}
-about {{ $time }} minutes
-{{ end }}
+{{- $time := div .WordCount 200 -}}
+{{ if le $time 1 }}about 1 minute
+{{ else }}about {{ $time }} minutes
+{{- end -}}

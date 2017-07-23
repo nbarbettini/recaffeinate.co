@@ -33,7 +33,7 @@
                   <footer>
                     <div class="text-right">
                       {{ if .Truncated }}
-                      <a href="{{ .Permalink }}">{{ $.Site.Params.keepReading }}</a> ({{ trim (partial "time-estimate.html" .) "\n" }})
+                      <a href="{{ .Permalink }}">{{ $.Site.Params.keepReading }}</a> ({{- partial "time-estimate.html" . -}})
                       {{ end }}
                     </div>
                   </footer>
