@@ -4,7 +4,7 @@ draft: true
 title: What is HATEOAS?
 ---
 
-HATEOAS, or _Hypertext as the Engine of Application State_, is a complicated-sounding term for a simple idea:
+HATEOAS, or _Hypermedia as the Engine of Application State_, is a complicated-sounding term for a simple idea:
 
 > **A client interacts with a REST API entirely through the responses provided dynamically by the server.**
 

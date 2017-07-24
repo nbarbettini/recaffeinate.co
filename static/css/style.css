@@ -4,7 +4,7 @@ body {
 }
 
 .container {
-  max-width: 780px;
+  max-width: 800px;
   margin: 4rem auto;
 }
 
@@ -68,6 +68,8 @@ h1, h2, h3, h4, h5, h6 {
 
 hr.divider {
   width: 70%;
+  margin-top: 4rem;
+  margin-bottom: 4.5rem;
 }
 
 hr.divider:after {

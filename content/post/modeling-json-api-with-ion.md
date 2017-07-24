@@ -34,11 +34,11 @@ Both HAL and JSON-API documents tend to look like this:
 
 The result tends to be documents with huge chunks of links tacked onto the top or bottom. Machines probably won't care, but it's awkward for humans to reason about. When was the last time you bundled up all the `<a>` tags at the bottom of your HTML document?
 
-#### The ION hypermedia type
+#### The Ion hypermedia type
 
-There's a new kid on the block called [Ion][ion-def], not to be confused with Amazon's [Ion serialization format][amazon-ion-def]. ION describes itself as _**an intuitive JSON-based hypermedia type for REST**_. It's currently being finalized and will be sent to the IETF as a formal draft soon.
+There's a new kid on the block called [Ion][ion-def], not to be confused with Amazon's [Ion serialization format][amazon-ion-def]. Ion describes itself as _**an intuitive JSON-based hypermedia type for REST**_. It's currently being finalized and will be sent to the IETF as a formal draft soon.
 
-Like HAL and JSON-API, ION is meant to help facilitate HATEOAS in a JSON API. Unlike HAL and JSON-API, it's a very short and simple specification that puts a strong emphasis on being friendly to both humans and machines, and adding a minimal amount of cruft to JSON.
+Like HAL and JSON-API, Ion is meant to help facilitate HATEOAS in a JSON API. Unlike HAL and JSON-API, it's a very short and simple specification that puts a strong emphasis on being friendly to both humans and machines, and adding a minimal amount of cruft to JSON.
 
 Here's a basic Ion document:
 

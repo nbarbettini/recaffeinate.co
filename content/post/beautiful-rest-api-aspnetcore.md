@@ -9,7 +9,7 @@ tags: ["dotnet"]
 
 (hateoas)
 
-Today, I'll show you how to solve this problem with ASP.NET Core and the ION hypermedia type. (If you want an introduction to ION, read [Modeling JSON APIs with ION][ion-intro]).
+Today, I'll show you how to solve this problem with ASP.NET Core and the Ion hypermedia type. (If you want an introduction to ION, read [Modeling JSON APIs with Ion]({{< ref "post/modeling-json-api-with-ion.md" >}})).
 
 <!--more-->
 
