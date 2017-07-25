@@ -1,6 +1,5 @@
 ---
-date: 2017-07-04T14:40:56-07:00
-draft: true
+date: 2017-07-25T09:52:10-07:00
 title: What is HATEOAS?
 ---
 
