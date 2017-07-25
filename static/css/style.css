@@ -127,7 +127,29 @@ h1.post-title {
   margin-left: 5px;
 }
 
-.hero-intro {
-  margin-top: 9rem;
-  margin-bottom: 2rem;
+.intro-hero {
+  margin-top: 7rem;
+  margin-bottom: 3rem;
+}
+
+.bug-hero {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.alert {
+  padding: 15px;
+  border: 1px solid #fcddab;
+  border-radius: 4px;
+  background-color: #fef3e1;
+  font-size: 1.2em;
+  margin-bottom: 0;
+}
+
+.alert a {
+  font-weight: bold;
+}
+
+.alert p {
+  margin-bottom: 0;
 }
