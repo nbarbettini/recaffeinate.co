@@ -42,7 +42,7 @@ Imagine this simplified response:
 </html>
 ```
 
-A REST API might return JSON or XML instead, but the principle is the same. Here's what a JSON response might look like, modeled with Ion:
+A REST API might return JSON or XML instead, but the principle is the same. Here's what a JSON response might look like, modeled with [Ion]({{< ref "post/modeling-json-api-with-ion.md" >}}):
 
 ```
 {
@@ -77,7 +77,7 @@ When you use your browser to visit a deep URL, you rarely type the entire addres
 
 It's no different for REST APIs -- a starting point or "root" document allows a client to truly discover how to use an API just like a browser.
 
-A simple root document could look like (using Ion again):
+A simple root document could look like (using [Ion]({{< ref "post/modeling-json-api-with-ion.md" >}}) again):
 
 ```
 {

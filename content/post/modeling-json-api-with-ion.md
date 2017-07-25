@@ -1,5 +1,5 @@
 ---
-date: 2017-07-04T14:58:13-07:00
+date: 2017-07-04T14:58:13-07:00!
 draft: true
 title: Modeling beautiful JSON APIs with Ion
 ---
