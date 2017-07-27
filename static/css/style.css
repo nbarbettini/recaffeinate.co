@@ -114,6 +114,10 @@ h1.post-title {
   text-align: center;
 }
 
+.text-large {
+  font-size: 1.3em;
+}
+
 .heart-icon {
   display: inline-block;
   position: relative;
@@ -130,7 +134,7 @@ h1.post-title {
 }
 
 .intro-hero {
-  margin-top: 7rem;
+  margin-top: 8rem;
   margin-bottom: 3rem;
 }
 
