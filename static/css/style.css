@@ -171,3 +171,42 @@ h1.post-title {
   border-left-width: 5px;
   padding-left: 1.5rem;
 }
+
+.title-coffee-icon {
+  width: 35px;
+}
+
+h1.blog-title {
+  font-size: 5rem;
+}
+
+@media (min-width: 1000px) {
+  .title-coffee-icon {
+    display: inline;
+  }
+}
+
+
+@media (min-width: 550px) {
+  .title-coffee-icon {
+    display: none;
+  }
+
+  h1.blog-title {
+    font-size: 3rem;
+    padding-top: 1.2rem;
+  }
+}
+
+@media (min-width: 750px) {
+  h1.blog-title {
+    font-size: 5rem;
+    padding-top: 0;
+  }
+}
+
+@media (min-width: 950px) {
+  .title-coffee-icon {
+    display: inline;
+  }
+}
