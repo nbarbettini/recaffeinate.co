@@ -4,11 +4,14 @@
   <body>
     <div class="container">
       {{ partial "header.html" . }}
+
+      {{ if not .Params.page }}
       <div class="row bug-hero">
         <div class="twelve columns">
           {{ partial "bug.html" . }}
         </div>
       </div>
+      {{ end }}
       <div class="row">
         <div class="twelve columns">
           <article class="post">
@@ -27,9 +30,11 @@
       <div class="row">
         {{ partial "footer.html" . }}
       </div>
+      {{ if not .Params.page }}
       <div class="comments">
         {{ partial "disqus.html" . }}
       </div>
+      {{ end }}
     </div>
   </body>
 </html>
