@@ -1,6 +1,6 @@
 ---
 title: "Better route linking in ASP.NET Core"
-date: 2017-07-24T06:41:51-07:00
+date: 2017-08-01T06:41:51-07:00
 draft: true
 tags: ["dotnet"]
 ---
@@ -21,15 +21,23 @@ public Task<IActionResult> NewPostAsync()
 }
 ```
 
-Besides specifying the endpoint name with the first attribute parameter (like `/posts` or `/posts/new`), you can optionally name routes with an arbitrary string name:
+Simple enough!
+
+You can provide a unique name for each route if you need to link to the route somewhere else. In this post, I'll show you how to name your routes, and share some best practices I've developed for linking between routes in ASP.NET Core.
+
+<!--more-->
+
+
+#### Naming routes
+
+You can specify an optional string name as another parameter of the attribute:
 
 ```
 [HttpGet("/post/{id}", Name = "GetPost")]
 ```
 
-Route names have no impact on ASP.NET Core's route matching behavior, but they're quite handy if you need to generate URLs and links between routes from application code.
+Route names have no impact on ASP.NET Core's route matching behavior, but they're quite handy if you need to generate URLs and links between routes from application code. Because ASP.NET Core identifies a route by its name, the name you provide must be globally unique.
 
-<!--more-->
 
 #### URL generation in ASP.NET Core
 
