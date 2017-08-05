@@ -1,6 +1,7 @@
 ---
 date: 2017-07-25T09:52:10-07:00
 title: What is HATEOAS?
+banner: lynda-rest-api
 ---
 
 HATEOAS, or _Hypermedia as the Engine of Application State_, is a complicated-sounding term for a simple idea:

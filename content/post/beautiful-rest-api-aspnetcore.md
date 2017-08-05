@@ -3,6 +3,7 @@ date: 2017-07-28T14:40:56-07:00
 draft: true
 title: Beautiful RESTful APIs in ASP.NET Core
 tags: ["dotnet"]
+banner: lynda-rest-api
 ---
 
 (intro)

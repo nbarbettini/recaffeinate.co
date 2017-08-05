@@ -1,6 +1,7 @@
 ---
 date: 2017-07-27T07:03:16-07:00
 title: Modeling beautiful JSON APIs with Ion
+banner: lynda-rest-api
 ---
 
 JSON is by far the most popular response format for APIs today. It's not hard to see why: it's easy for both humans and machines to read. Virtually all platforms and devices can read and write JSON, making it nearly as ubiquitous as HTML. JSON is unstructured and "squishy", which makes it easy to model dynamic responses. (Maybe a little too easy.)

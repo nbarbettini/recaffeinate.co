@@ -6,9 +6,15 @@
       {{ partial "header.html" . }}
 
       {{ if not .Params.page }}
-      <div class="row bug-hero">
+      <div class="row banner-hero">
         <div class="twelve columns">
-          {{ partial "bug.html" . }}
+          {{ $path := "general-banner.html" }}
+          {{ if .Params.banner }}
+            {{ $path := printf "%s-banner.html" .Params.banner }}
+            {{ partial $path . }}
+          {{ else }}
+            {{ partial "general-banner.html" . }}
+          {{ end }}          
         </div>
       </div>
       {{ end }}

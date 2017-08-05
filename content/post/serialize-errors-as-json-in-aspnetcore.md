@@ -2,6 +2,7 @@
 title: "Serialize all errors as JSON in ASP.NET Core"
 date: 2017-08-01T12:55:32-07:00
 tags: ["dotnet"]
+banner: lynda-rest-api
 ---
 
 A web API that returns JSON responses should be expected to return errors or exceptions as JSON messages, too. You can use [exception filters][exception-filters] in ASP.NET Core MVC to trap and serialize exceptions that occur within MVC. However, if an exception is thrown before (or after) the MVC pipeline, it won't be handled by the filter and the client will get an ugly error message (or a `500 Internal Server Error`).

@@ -3,6 +3,7 @@ title: "Better route linking in ASP.NET Core"
 date: 2017-08-01T06:41:51-07:00
 draft: true
 tags: ["dotnet"]
+banner: lynda-rest-api
 ---
 
 ASP.NET Core uses [route templates][route-templates] and [attributes][attr-routing] to define how methods in an API controller should be bound to routes or endpoints in the API:
