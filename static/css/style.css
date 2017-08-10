@@ -180,6 +180,10 @@ h1.blog-title {
   font-size: 5rem;
 }
 
+img {
+  max-width: 800px;
+}
+
 @media (min-width: 1000px) {
   .title-coffee-icon {
     display: inline;
