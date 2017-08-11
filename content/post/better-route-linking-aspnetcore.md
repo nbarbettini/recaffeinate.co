@@ -29,7 +29,7 @@ You can provide a unique name for each route if you need to link to the route so
 <!--more-->
 
 
-#### Naming routes
+#### Named routes
 
 You can specify an optional string name as another parameter of the attribute:
 
@@ -58,7 +58,7 @@ The route name makes for a nice separation between declaring the route and (late
 Wouldn't it be nice for the compiler to give you a warning instead?
 
 
-#### Naming routes with `nameof`
+#### Named routes with `nameof`
 
 The `nameof` keyword provides a simple way to get the compiler to work for you:
 
