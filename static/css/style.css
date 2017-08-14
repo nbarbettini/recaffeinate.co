@@ -184,6 +184,10 @@ img {
   max-width: 800px;
 }
 
+.signup-form {
+  padding-top: 10px;
+}
+
 @media (min-width: 1000px) {
   .title-coffee-icon {
     display: inline;
