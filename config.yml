@@ -11,12 +11,12 @@ params:
   navLinks:
     - title: About
       url: /about
+    - title: ASP.NET Core Book
+      url: /book
     - title: Talks
       url: https://speakerdeck.com/nbarbettini
     - title: Github
       url: https://github.com/nbarbettini
-    - title: Twitter
-      url: https://twitter.com/nbarbettini
 author:
   name: Nate Barbettini
   bio: Author, teacher, and full-stack developer. Microsoft MVP '17. California-born, Texas-raised.
