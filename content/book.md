@@ -30,7 +30,7 @@ Read the book <a href="https://nbarbettini.gitbooks.io/little-asp-net-core-book/
 
 The Little ASP.NET Core Book will be updated frequently and will always be completely free. The links above will always point to the latest version.
 
-**Want to stay updated?** Subscribe [on Github](https://github.com/nbarbettini/little-aspnetcore-book) or [via email](http://eepurl.com/cXACob)!
+**Want to stay updated?** Subscribe [on Github](https://github.com/nbarbettini/little-aspnetcore-book) or <a href="http://eepurl.com/cXACob" target="_blank">via email</a>!
 
 
 #### Is this book for me?
