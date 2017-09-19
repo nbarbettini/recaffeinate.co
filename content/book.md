@@ -24,7 +24,9 @@ Don't worry, you don't need to know anything about ASP.NET Core (or any of the a
 
 #### Get the book
 
-Download the book as a [PDF](https://s3.amazonaws.com/recaffeinate-files/LittleAspNetCoreBook.pdf), or [read it online](https://nbarbettini.gitbooks.io/little-asp-net-core-book/content/).
+Download the book as a <a href="https://s3.amazonaws.com/recaffeinate-files/LittleAspNetCoreBook.pdf" target="_blank"
+    onclick="sendClickEvent('little-aspnetcore-book-pdf');">PDF</a>, or <a href="https://nbarbettini.gitbooks.io/little-asp-net-core-book/content/" target="_blank"
+    onclick="sendClickEvent('little-aspnetcore-book-online');">read it online</a>.
 
 The Little ASP.NET Core Book will be updated frequently and will always be completely free. The links above will always point to the latest version.
 
