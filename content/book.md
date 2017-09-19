@@ -24,19 +24,23 @@ Don't worry, you don't need to know anything about ASP.NET Core (or any of the a
 
 #### Get the book
 
-Download the book as a <a href="https://s3.amazonaws.com/recaffeinate-files/LittleAspNetCoreBook.pdf" target="_blank"
-    onclick="sendClickEvent('little-aspnetcore-book-pdf');">PDF</a>, or <a href="https://nbarbettini.gitbooks.io/little-asp-net-core-book/content/" target="_blank"
-    onclick="sendClickEvent('little-aspnetcore-book-online');">read it online</a>.
+Read the book <a href="https://nbarbettini.gitbooks.io/little-asp-net-core-book/content/" target="_blank"
+    onclick="sendClickEvent('little-aspnetcore-book-online');">online on GitBook</a>, or download it for offline reading as a <a href="https://s3.amazonaws.com/recaffeinate-files/LittleAspNetCoreBook.pdf" target="_blank"
+    onclick="sendClickEvent('little-aspnetcore-book-pdf');">PDF</a>. It's yours to share and copy as much as you'd like under the [Creative Commons Attribution](https://creativecommons.org/licenses/by/4.0/) license.
 
 The Little ASP.NET Core Book will be updated frequently and will always be completely free. The links above will always point to the latest version.
 
 **Want to stay updated?** Subscribe [on Github](https://github.com/nbarbettini/little-aspnetcore-book) or [via email](http://eepurl.com/cXACob)!
 
 
-#### About the book
+#### Is this book for me?
 
-If you're new to programming, this book will introduce you to the patterns and concepts used to build modern web applications. You'll learn how to build a web app (and how the big pieces fit together) by building something from scratch! While this little book won't be able to cover absolutely everything you need to know about programming, it'll give you a starting point so you can learn more advanced topics.
+The Little ASP.NET Core book is written as a friendly, accessible introduction to web programming and the ASP.NET Core framework. If you
 
-If you already code in a backend language like Node, Python, Ruby, Go, or Java, you'll notice a lot of familiar ideas like MVC, view templates, and dependency injection. The code will be in C#, but it won't look too different from what you already know.
+* Are new to programming
+* Already code in a backend stack like Node, Python, Ruby, Go, or Java
+* Are an ASP.NET MVC developer
 
-If you're an ASP.NET MVC developer, you'll feel right at home! ASP.NET Core adds some new tools and reuses (and simplifies) the things you already know.
+This book will help you learn something new!
+
+Read more about how and why I wrote this book in my [blog post](/post/introducing-little-aspnetcore-book/).
