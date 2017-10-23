@@ -1,0 +1,23 @@
+{
+  "name": "recaffeinate.co",
+  "private": true,
+  "version": "1.0.0",
+  "description": "This repository contains my personal website, built with [Hugo](https://www.gohugo.io).",
+  "scripts": {
+    "test-server": "node test-server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nbarbettini/recaffeinate.co.git"
+  },
+  "author": "Nate Barbettini",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nbarbettini/recaffeinate.co/issues"
+  },
+  "homepage": "https://github.com/nbarbettini/recaffeinate.co#readme",
+  "devDependencies": {
+    "finalhandler": "^1.1.0",
+    "serve-static": "^1.13.1"
+  }
+}
