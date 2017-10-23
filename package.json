@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "description": "This repository contains my personal website, built with [Hugo](https://www.gohugo.io).",
   "scripts": {
-    "test-server": "node test-server.js"
+    "test": "hugo; node test-server.js"
   },
   "repository": {
     "type": "git",

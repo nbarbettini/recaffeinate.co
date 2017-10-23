@@ -7,7 +7,7 @@ hide: true
 
 ### Hi, I'm Nate.
 
-<img src="/img/headshot.jpg" class="headshot" style="float: left">
+<img src="/img/headshot.jpg" class="headshot">
 
 I'm an author, speaker, and self-taught developer who specializes in full-stack .NET and JavaScript. I'm passionate about helping people learn how to write clean, secure code. I'm currently a Senior Developer Advocate at [Okta](https://developer.okta.com), which gives me the opportunity to travel and speak about building secure applications.
 

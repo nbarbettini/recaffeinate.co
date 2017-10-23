@@ -7,7 +7,7 @@ hide: true
 
 ### The Little ASP.NET Core Book
 
-<img src="/img/little-aspnetcore-book-mock.png" class="headshot" style="float: left">
+<img src="/img/little-aspnetcore-book-mock.png" class="headshot">
 
 I wrote this short book to help developers and people interested in web programming learn about ASP.NET Core 2.0, a new framework for building web applications and APIs.
 

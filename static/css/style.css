@@ -3,6 +3,14 @@ body {
   font-family: 'Merriweather', serif;
 }
 
+.color-darkgray {
+  color: #4A4A4A;
+}
+
+.color-lightgray {
+  color: #999;
+}
+
 .container {
   max-width: 800px;
   margin: 4rem auto;
@@ -125,12 +133,15 @@ h1.post-title {
   left: 2px;
   padding: 1px;
   width: 22px;
+  margin-right: 3px;
+  width: 14px;
 }
 
 .headshot {
   width: 140px;
   margin-right: 15px;
   margin-left: 5px;
+  float: left;
 }
 
 .intro-hero {
@@ -217,4 +228,9 @@ img {
   .title-coffee-icon {
     display: inline;
   }
+}
+
+.hidden {
+  position: absolute;
+  left: -5000px;
 }

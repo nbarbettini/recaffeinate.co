@@ -4,9 +4,9 @@ metaDataFormat: yaml
 title: recaffeinate
 disqusShortname: recaffeinate
 params:
-  stylizedTitle: "<span style='color: #999'>recaffei</span><span style='color: #444'>nate</span> <img src='/img/coffee.png' class='title-coffee-icon'>"
+  stylizedTitle: '<span class="color-lightgray">recaffei</span><span class="color-darkgray">nate</span> <img src="/img/coffee.png" class="title-coffee-icon">'
   description: the blog and website of Nate Barbettini
-  googleAnalyticsTrackingId: "UA-103155569-1"
+  googleAnalyticsTrackingId: UA-103155569-1
   keepReading: keep reading...
   navLinks:
     - title: About

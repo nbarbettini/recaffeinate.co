@@ -8,7 +8,7 @@ var serve = serveStatic('public/', {
   'setHeaders': setHeaders
 });
 
-var csp = "default-src 'self';";
+var csp = "default-src 'none'; style-src 'self'; script-src 'self' www.google-analytics.com; img-src 'self' www.google-analytics.com; font-src 'self';";
 
 function setHeaders(res, path) {
   res.setHeader('X-Content-Type-Options', 'nosniff');

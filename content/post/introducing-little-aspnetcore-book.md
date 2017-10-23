@@ -6,7 +6,7 @@ tags: ["dotnet"]
 banner: none
 ---
 
-<img src="/img/little-aspnetcore-book-mock.png" class="headshot" style="float: left">
+<img src="/img/little-aspnetcore-book-mock.png" class="headshot">
 Today I'm excited to release my side project for the last few months: the [Little ASP.NET Core Book](/book)! 
 
 This **free** book is a short introduction to the [ASP.NET Core 2.0](https://docs.asp.net) web framework. If you've never built apps in C# or ASP.NET (or even if you have!), this book will teach you the basics of building modern, fast web applications using ASP.NET Core.
