@@ -4,9 +4,19 @@
   <meta content="width=device-width, initial-scale=1" name="viewport">
   {{ .Hugo.Generator }}
   <meta content="{{ .Site.Author.name }}" name="author">
-  <meta content="{{ .Site.Params.description }}" name="description">
+  <meta content="{{ .Description }}" name="description">
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:creator" content="@nbarbettini" />
+  <meta property="og:url" content="{{ .Permalink }}" />
+  <meta property="og:title" content="{{ if ne .Title .Site.Title }}{{ .Title }}{{ else }}{{ .Site.Title }}, {{.Site.Params.description}}{{ end }}" />
+  <meta property="og:image" content="{{ $.Param "pageimage" | absURL }}" />
+  {{ if .Description }}
+  <meta property="og:description" content="{{ .Description }}" />
+  {{ end }}
+
   <title>
-   {{ if ne .Title .Site.Title }}{{ .Title }} - {{ end }} {{ .Site.Title }}, {{.Site.Params.description}}
+    {{ if ne .Title .Site.Title }}{{ .Title }}{{ else }}{{ .Site.Title }}, {{.Site.Params.description}}{{ end }}
   </title>
 
   <link href="{{ .RSSLink }}" rel="alternate" title="RSS Feed" type="application/rss+xml">

@@ -8,6 +8,7 @@ params:
   description: the blog and website of Nate Barbettini
   googleAnalyticsTrackingId: UA-103155569-1
   keepReading: keep reading...
+  pageimage: /img/coffee.png
   navLinks:
     - title: About
       url: /about
@@ -19,5 +20,5 @@ params:
       url: https://github.com/nbarbettini
 author:
   name: Nate Barbettini
-  bio: Author, teacher, and full-stack developer. Microsoft MVP '17. California-born, Texas-raised.
+  bio: Author, teacher, and full-stack developer. Microsoft MVP. California-born, Texas-raised.
   email: nathanaelb@gmail.com
