@@ -1,6 +1,7 @@
 ---
 date: 2017-07-25T09:52:10-07:00
 title: What is HATEOAS?
+description: Understanding Hypermedia as the Engine of Application State
 banner: lynda-rest-api
 ---
 

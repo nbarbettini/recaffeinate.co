@@ -1,6 +1,7 @@
 ---
 date: 2017-07-27T07:03:16-07:00
 title: Modeling beautiful JSON APIs with Ion
+description: A short introduction to the Ion hypermedia type
 banner: lynda-rest-api
 ---
 

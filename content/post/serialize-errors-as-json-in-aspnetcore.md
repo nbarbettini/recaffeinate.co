@@ -1,5 +1,6 @@
 ---
 title: "Serialize all errors as JSON in ASP.NET Core"
+description: Automatically return pretty error responses in an ASP.NET Core API
 date: 2017-08-01T12:55:32-07:00
 tags: ["dotnet"]
 banner: lynda-rest-api

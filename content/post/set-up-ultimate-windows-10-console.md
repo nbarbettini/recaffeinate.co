@@ -1,5 +1,6 @@
 ---
 title: "Set up the ultimate Windows 10 console"
+description: A guide to setting up PowerShell, ConEmu,Chocolatey, Git for Windows, and posh-git on Windows 10
 date: 2017-08-10T07:32:58-07:00
 ---
 
