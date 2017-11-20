@@ -1,14 +1,14 @@
 ---
 title: "A little book update"
 description: "An update on the Little ASP.NET Core Book"
-date: 2017-11-13T22:01:44-06:00
+date: 2017-11-20T07:15:46-08:00
 tags: ["dotnet", "little-aspnetcore-book"]
 banner: none
 ---
 
-It's been almost two months since I released the [Little ASP.NET Core Book](/book), and I've been blown away by the response!
+It's been over two months since I released the [Little ASP.NET Core Book](/book), and I've been blown away by the response!
 
-> _"This looks great. I've been learning ASP.NET Core with scattered resources around the web, and your book seems to explain everything in a simple way." - aesthetics1 [on HackerNews](https://news.ycombinator.com/item?id=15289047)_
+> _"This looks great. I've been learning ASP.NET Core with scattered resources around the web, and your book seems to explain everything in a simple way." - [aesthetics1 on HackerNews](https://news.ycombinator.com/item?id=15289047)_
 
 I've been excited to see people downloading and tweeting about the book, but I'm even more excited to see people forking the content, adding suggestions, and translating it to other languages.
 
@@ -20,7 +20,7 @@ A few fantastic polyglot programmers have started translating the Little ASP.NET
 
 Sahin was the first to finish with a Turkish translation, [ASP.NET Core El Kitabı](https://www.gitbook.com/book/sahinyanlik/kisa-asp-net-core-kitabi/details). Translations to Spanish and German are in the works!
 
-#### Updates
+#### Little updates
 
 The Little ASP.NET Core Book is still a work-in-progress. There have been three [minor updates](https://github.com/nbarbettini/little-aspnetcore-book/releases) since the initial launch, all focused on fixing typos and adding small clarifications or suggestions sent in by readers.
 
