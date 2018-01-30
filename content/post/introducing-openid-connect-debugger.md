@@ -1,9 +1,10 @@
 ---
 title: "Introducing the OpenID Connect debugger"
-description: "A new tool to help troubleshoot OAuth 2.0 and OpenID Connect flows."
+description: "A tool to set up and troubleshoot OAuth 2.0 and OpenID Connect flows."
 date: 2018-01-30T07:55:31-08:00
-tags: ["oidc"]
+tags: ["oidc", "oidcdebugger"]
 banner: none
+postimage: "/img/post/introducing-openid-connect-debugger/oidcdebugger-gear.png"
 ---
 
 <img src="/img/post/introducing-openid-connect-debugger/oidcdebugger-gear.png" class="headshot">
