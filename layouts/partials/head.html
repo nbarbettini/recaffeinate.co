@@ -10,7 +10,7 @@
   <meta name="twitter:creator" content="@nbarbettini" />
   <meta property="og:url" content="{{ .Permalink }}" />
   <meta property="og:title" content="{{ if ne .Title .Site.Title }}{{ .Title }}{{ else }}{{ .Site.Title }}, {{.Site.Params.description}}{{ end }}" />
-  <meta property="og:image" content="{{ $.Param "pageimage" | absURL }}" />
+  <meta property="og:image" content="{{ if .Params.postimage }}{{ .Params.postimage | absURL}}{{ else }}{{ $.Param "pageimage" | absURL }}{{ end }}" />
   {{ if .Description }}
   <meta property="og:description" content="{{ .Description }}" />
   {{ end }}
