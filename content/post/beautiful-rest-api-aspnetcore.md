@@ -14,7 +14,7 @@ Today, I'll show you how to solve this problem with ASP.NET Core and the Ion hyp
 
 <!--more-->
 
-# Why ASP.NET Core?
+## Why ASP.NET Core?
 
 ASP.NET Core is an open-source web framework from Microsoft that runs on top of .NET Core (also open-source). It's faster than Node/Express (by a [long shot][perf-vs-node]), and it works well with modern web patterns like MVC and single-page apps. And you get the awesome features of C# like async/await and LINQ.
 
@@ -22,5 +22,5 @@ If you haven't tried ASP.NET Core lately (or ever!), read my post on [building a
 
 (fast, statically-typed, big ecosystem, runs anywhere)
 
-# Modeling resources in ASP.NET Core
+## Modeling resources in ASP.NET Core
 

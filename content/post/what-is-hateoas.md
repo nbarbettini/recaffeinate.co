@@ -25,7 +25,7 @@ You typically need to read API docs to understand:
 
 One of the distinguishing features of the REST architecture is this idea that the responses _themselves_ should tell you what you can do and how you can do it. This is HATEOAS in a nutshell, although it could also be referred to as "discoverability".
 
-#### Clients are like browsers
+## Clients are like browsers
 
 Think about how your browser interacts with a site like [Wikipedia][wiki]. It doesn't have any special Wikipedia-specific code -- it knows how to render HTML and CSS, and that's about it (relatively speaking). Everything the browser needs to know about what it can do next is included in the document itself!
 
@@ -65,7 +65,7 @@ A REST API might return JSON or XML instead, but the principle is the same. Here
 
 If you think of the client like a browser, you already understand HATEOAS.
 
-#### Links and state transitions
+## Links and state transitions
 
 There are two ideas represented in the example above: **links** between resources, and **state transitions**.
 
@@ -73,7 +73,7 @@ A state transition is anything that you can do that changes the application stat
 
 To truly satisfy the HATEOAS constraint, a REST API should express both where the client can go (a graph of links) and what it can change (allowed state transitions) in the response document.
 
-#### Entry point or root document
+## Entry point or root document
 
 When you use your browser to visit a deep URL, you rarely type the entire address manually. Instead, you visit the site's home page (or a bookmark you already have) and then use links to navigate to the location you want.
 
@@ -89,7 +89,7 @@ A simple root document could look like (using [Ion]({{< ref "post/modeling-json-
 }
 ```
 
-#### Further reading
+## Further reading
 
 I didn't understand the concept of HATEOAS when I first started working on APIs, but the analogy to web browsers finally "clicked" it into place.
 

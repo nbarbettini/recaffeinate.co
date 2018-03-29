@@ -14,13 +14,13 @@ I've been excited to see people downloading and tweeting about the book, but I'm
 
 <!--more-->
 
-#### Reading in your own language
+## Reading in your own language
 
 A few fantastic polyglot programmers have started translating the Little ASP.NET Core Book to other (spoken) languages.
 
 Sahin was the first to finish with a Turkish translation, [ASP.NET Core El Kitabı](https://www.gitbook.com/book/sahinyanlik/kisa-asp-net-core-kitabi/details). Translations to Spanish and German are in the works!
 
-#### Little updates
+## Little updates
 
 The Little ASP.NET Core Book is still a work-in-progress. There have been three [minor updates](https://github.com/nbarbettini/little-aspnetcore-book/releases) since the initial launch, all focused on fixing typos and adding small clarifications or suggestions sent in by readers.
 
@@ -28,7 +28,7 @@ I'm tracking bugs and suggestions [on GitHub](https://github.com/nbarbettini/lit
 
 The latest version of the book is always available from this site, or the vanity URL [littleasp.net/book](http://littleasp.net/book).
 
-#### Looking ahead
+## Looking ahead
 
 So far, the updates have been minor. I'm gathering feedback for a 1.1 release of the book, where I plan to improve a couple of areas:
 

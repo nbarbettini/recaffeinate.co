@@ -7,7 +7,7 @@ page: true
 hide: true
 ---
 
-### The Little ASP.NET Core Book
+## The Little ASP.NET Core Book
 
 <img src="/img/little-aspnetcore-book-mock.png" class="headshot">
 
@@ -24,7 +24,7 @@ This short (and free!) book is structured as a tutorial. You'll build an app fro
 Don't worry, you don't need to know anything about ASP.NET Core (or any of the above) to get started.
 
 
-#### Get the book
+### Get the book
 
 Read the book <a href="https://nbarbettini.gitbooks.io/little-asp-net-core-book/content/" target="_blank"
     onclick="sendClickEvent('little-aspnetcore-book-online');">online on GitBook</a>, or download it for offline reading as a <a href="https://s3.amazonaws.com/recaffeinate-files/LittleAspNetCoreBook.pdf" target="_blank"
@@ -37,7 +37,7 @@ The Little ASP.NET Core Book will be updated frequently and will always be compl
 **Want to stay updated?** Subscribe [on Github](https://github.com/nbarbettini/little-aspnetcore-book) or <a href="http://eepurl.com/cXACob" target="_blank">via email</a>!
 
 
-#### Is this book for me?
+### Is this book for me?
 
 The Little ASP.NET Core book is written as a friendly, accessible introduction to web programming and the ASP.NET Core framework. If you
 

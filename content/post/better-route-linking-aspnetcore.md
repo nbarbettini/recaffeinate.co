@@ -29,7 +29,7 @@ You can provide a unique name for each route if you need to link to the route so
 <!--more-->
 
 
-#### Named routes
+## Named routes
 
 You can specify an optional string name as another parameter of the attribute:
 
@@ -40,7 +40,7 @@ You can specify an optional string name as another parameter of the attribute:
 Route names have no impact on ASP.NET Core's route matching behavior, but they're quite handy if you need to generate URLs and links between routes from application code. Because ASP.NET Core identifies a route by its name, the name you provide must be globally unique.
 
 
-#### URL generation in ASP.NET Core
+## URL generation in ASP.NET Core
 
 If you need to generate a URL in your application (to link to an MVC action, or for [HATEOAS]({{< ref "post/what-is-hateoas.md" >}}) in an API), ASP.NET Core provides the `Url` helper property in controllers and views:
 
@@ -57,8 +57,7 @@ The route name makes for a nice separation between declaring the route and (late
 
 Wouldn't it be nice for the compiler to give you a warning instead?
 
-
-#### Named routes with `nameof`
+### Named routes with `nameof`
 
 The `nameof` keyword provides a simple way to get the compiler to work for you:
 
@@ -77,7 +76,7 @@ var link = Url.Link(
 
 By naming the method with a long, descriptive name (`GetPostById` instead of `Get` or `GetPost`), and using `nameof` to name the route after the method, the compiler will ensure that references to the route by name will always be correct, anywhere in your code. Less magic strings, more compiler warnings, less unexpected behavior.
 
-#### Strongly-typed parameter lists
+## Strongly-typed parameter lists
 
 The second parameter to `Url.Link` defines the **route values** that should be passed to the route -- parts of the path or query string, for example:
 
@@ -126,7 +125,7 @@ var link = Url.Link(
     routeValues: new GetPostByIdParameters { Id = 1 });
 ```
 
-#### Further reading
+## Further reading
 
 The ASP.NET Core documentation has some great reference material on routing and URL generation:
 

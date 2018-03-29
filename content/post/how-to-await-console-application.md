@@ -37,7 +37,7 @@ class Program
 
 You *could* synchronously wait for the async method by using `.Result` or `.Wait()`, but this causes a different problem that may not be obvious at first.
 
-#### Exceptions wrapped in AggregateException
+## Exceptions wrapped in AggregateException
 
 What happens when your asynchronous code throws an exception?
 
@@ -73,7 +73,7 @@ You don't normally see `AggregateException` when you use `await`, because the co
 
 If you block with `.Result` or `.Wait()` instead of using `await`, you have to deal with the `AggregateException` behavior yourself.
 
-#### Unwrap exceptions manually
+## Unwrap exceptions manually
 
 Instead of blocking with `.Result`, use `.GetAwaiter().GetResult()`:
 
@@ -90,7 +90,7 @@ catch (ArgumentException aex)
 
 This time, the `ArgumentException` will be caught as you'd expect, because `.GetAwaiter().GetResult()` unrolls the first exception the same way `await` does. This approach follows the [principle of least surprise][least-surprise] and is easier to understand.
 
-#### Coming soon: async main
+## Coming soon: async main
 
 There's currently a [proposal on the C# Language board](https://github.com/dotnet/csharplang/issues/97) to add "native" async entry points in C# 7.1. If this proposal is accepted and added to the language, the above example becomes much simpler (and more familiar) with `await`:
 
@@ -111,7 +111,7 @@ static async Task Main(string[] args)
 
 I like the proposed syntax and hope it makes the cut. Until then, I'll stick with the `GetAwaiter().GetResult()` workaround!
 
-#### Further reading
+## Further reading
 
 * [Is Task.Result the same as .GetAwaiter.GetResult()?](https://stackoverflow.com/q/17284517/3191599) on StackOverflow
 * [A Tour of Task, Part 6: Results](https://blog.stephencleary.com/2014/12/a-tour-of-task-part-6-results.html) on Stephen Cleary's blog

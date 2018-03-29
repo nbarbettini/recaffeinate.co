@@ -13,7 +13,7 @@ There are a few popular ways to add schemas to JSON, but they all have drawbacks
 
 <!--more-->
 
-#### Existing JSON schema formats
+## Existing JSON schema formats
 
 Schema-fied JSON comes in two basic flavors, depending on the goal: making JSON work more like XML, or facilitating HATEOAS. (HATEOAS is the core REST idea that APIs should express behavior as links in the response document. Read more in my [introduction to HATEOAS]({{< ref "post/what-is-hateoas.md" >}}).)
 
@@ -35,7 +35,7 @@ Both HAL and JSON-API documents tend to look like this:
 
 This results in documents with huge chunks of links tacked onto the top or bottom. Machines won't care, but it's awkward for humans to reason about. When was the last time you bundled up all the `<a>` tags at the bottom of your HTML document?
 
-#### The Ion hypermedia type
+## The Ion hypermedia type
 
 There's a new kid on the block called [Ion][ion-def] (not to be confused with Amazon's [Ion serialization format][amazon-ion-def]). Ion describes itself as _an intuitive JSON-based hypermedia type for REST_. It's currently being finalized and will be sent to the IETF as a formal draft soon.
 
@@ -53,7 +53,7 @@ Here's a basic Ion document:
 
 In other words, any valid JSON is already valid Ion!
 
-#### Linking between resources
+## Linking between resources
 
 Ion adds metadata to an existing JSON structure, but aims to do it in a minimal and clean way. For example, a link between resources is a simple object:
 
@@ -95,7 +95,7 @@ Because it's common to include a self-referential link in responses, the Ion spe
 ```
 
 
-#### Collections of resources
+## Collections of resources
 
 Ion also defines what collections (arrays) of resources should look like:
 
@@ -122,7 +122,7 @@ Ion also defines what collections (arrays) of resources should look like:
 
 It's easy to extend this basic collection definition to include more behavior, such as pagination.
 
-#### Conclusion
+## Conclusion
 
 I really like Ion's approach to minimal metadata. Links between resources is one half of the HATEOAS story, but to fully close the loop we also need a way to model state changes (such as creating or updating resources). I'll cover one of Ion's best features, [Forms][ion-forms], in a future post.
 

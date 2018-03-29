@@ -14,7 +14,7 @@ In this post, I'll show you how to write error handling middleware and how to ex
 
 <!--more-->
 
-#### Exception middleware
+## Exception middleware
 
 The basic pattern for any ASP.NET Core middleware is a class with an `Invoke` method:
 
@@ -76,7 +76,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 
 Now your middleware will be invoked whenever an unhandled exception occurs anywhere in your ASP.NET Core application.
 
-#### Return more detail in development
+## Return more detail in development
 
 It's a good idea to return generic error messages in production, so you don't leak information about your application. However, in development, the more detail the better.
 

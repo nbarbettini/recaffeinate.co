@@ -15,7 +15,7 @@ If you've ever struggled to set up OAuth or OpenID Connect, you're not alone! I 
 
 <!--more-->
 
-#### Why OAuth is hard
+## Why OAuth is hard
 
 There are a few reasons why OAuth (and OpenID Connect) flows are tricky to implement. There's a lot of confusion around the OAuth protocol, and many people don't quite understand how it's _supposed_ to work. I didn't fully grasp it myself until recently. (If you're in that camp, I'd recommend Keith Casey's excellent [Web Security: OAuth and OpenID Connect video course](https://www.lynda.com/Web-Development-tutorials/Web-Security-OAuth-OpenID-Connect/642498-2.html).)
 
@@ -28,7 +28,7 @@ However, even after I understood the protocol better, I still had difficulty:
 I noticed these same frustrations coming up every time I had to work with OAuth and OpenID Connect flows. It seemed like a good place for a tool that could help.
 
 
-#### Introducing the OpenID Connect debugger
+## Introducing the OpenID Connect debugger
 
 After a few months of tweaking in my spare time, the first version is ready! Jump over to the **OAuth debugger** (https://oauthdebugger.com) or **OpenID Connect debugger** (https://oidcdebugger.com).
 
@@ -45,7 +45,7 @@ Second, it handles the callback response. If the server responds with an error, 
 ![Error and success results](/img/post/introducing-openid-connect-debugger/error-and-success.gif)
 
 
-#### How to use the debugger
+## How to use the debugger
 
 All you need to do is temporarily set your OAuth client redirect URI to `https://oidcdebugger.com/debug` (or the equivalent on `oauthdebugger.com`):
 
@@ -54,7 +54,7 @@ All you need to do is temporarily set your OAuth client redirect URI to `https:/
 Once you've used the debugger to test the flow and get everything working, remove it and point the redirect URI back to your application.
 
 
-#### Request for feedback
+## Request for feedback
 
 Hopefully this tool makes working with OAuth 2.0 and OpenID Connect a little less stressful. {{< heart >}}
 
