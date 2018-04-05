@@ -6,7 +6,7 @@ tags: ["dotnet"]
 banner: lynda-rest-api
 ---
 
-Most ASP.NET developers are familiar with the `[RequireHttps]` attribute that forces HTTPS connections for a particular route or controller. However, if you're building an API, the [ASP.NET Core documentation][docs-enforce-ssl] includes this warning:
+Most ASP.NET developers are familiar with the `[RequireHttps]` attribute that forces HTTPS connections for a particular route or controller. However, if you're building an API in ASP.NET Core, the [official documentation][docs-enforce-ssl] includes this warning:
 
 > Do **not** use RequireHttpsAttribute on Web APIs that receive sensitive information. RequireHttpsAttribute uses HTTP status codes to redirect browsers from HTTP to HTTPS. API clients may not understand or obey redirects from HTTP to HTTPS.
 
@@ -16,81 +16,100 @@ It's important to use HTTPS for *both* your browser applications and APIs, but `
 
 ## Why not RequireHttps?
 
-If you're wondering why you shouldn't use `[RequireHttps]`, take a look at what happens when you use the attribute on an API controller:
+If you're wondering why you shouldn't use `[RequireHttps]`, take a look at what happens when you use the attribute on a controller:
 
 ```
-GET http://localhost/api/values
+GET http://api.example.com/values
 
 302 Found
-Location: https://localhost/api/values
+Location: https://api.example.com/values
 ```
 
-`[RequireHttps]` automatically returns a `302 Found` status, which will redirect a browser to the secure URL. This has two problems for APIs:
+`[RequireHttps]` automatically returns the `302 Found` HTTP status code, which will redirect a browser to the secure version of the URL. This has two problems for APIs:
 
-* API clients may not pay attention to `302` redirection status codes
+* API clients may not pay attention to 302 redirects
 * Any sensitive information a client attempts to send over HTTP could be intercepted
 
-As the docs state, it's a better idea to return `400 Bad Request` (which API clients will be more likely to understand), or to simply reject any HTTP connections entirely.
+The latter is important to understand. If your API accepts an insecure connection, this can happen:
 
-I think the latter is the best idea, but I'll show you how to do both.
+```
+POST http://api.example.com/mysecret
+Content-Type: application/json
 
-## Require HTTPS or return 400
+{
+  "secret": "I like JavaScript"
+}
 
-To return `400 Bad Request` instead of redirecting, you can create a custom attribute that overrides the existing behavior:
+302 Found
+Location: https://api.example.com/mysecret
+```
+
+It doesn't matter if the server tries to redirect the request, or even closes it with an error code. The data (and my secret love of JavaScript) was sent unencrypted and could have been intercepted.
+
+As the docs state, it's a better idea to simply reject insecure HTTP requests entirely. If your API clients aren't sending sensitive information, you could also return an error code like `400 Bad Request`. I'll show you how to do both.
+
+## Reject all insecure connections
+
+The best way to ensure your API clients connect over HTTPS is to make it the only option. This removes the possibility of a client trying to send something sensitive over HTTP, even accidentally.
+
+There are two ways to do this, depending on how you deploy your application:
+
+* **At the reverse proxy layer**. If you have nginx, IIS, or another reverse proxy sitting in front of your application, configure it to only listen on HTTPS. That way, connections over 80 (HTTP) will be rejected.
+* **At the server**. If you are serving your application directly from Kestrel (which isn't currently recommended), configure the server to only listen on 443. Thanks to Justin Helsley for pointing this out in the comments:
+
+```csharp
+.UseKestrel(options =>
+{
+    options.Listen(IPAddress.Loopback, 443, listenOptions =>
+    {
+        listenOptions.UseHttps("certificate.pfx", "password");
+    });
+});
+```
+
+Rui Figueiredo has a great article on [configuring HTTPS in ASP.NET Core from scratch](https://www.blinkingcaret.com/2017/03/01/https-asp-net-core/) that dives into the details of configuring nginx, IIS, or Kestrel. 👍
+
+## Return an HTTP error code
+
+In some APIs, you may want to allow insecure requests but return a status code like `400 Bad Request` to the client. This is **less secure** than rejecting the connection, because any data the client attempts to send in the request could be leaked as described above.
+
+However, if this is the pattern your API needs, you can create a custom attribute that overrides the behavior of `[RequireHttps]`:
 
 ```csharp
 public class RequireHttpsOrClose : RequireHttpsAttribute
 {
     protected override void HandleNonHttpsRequest(AuthorizationFilterContext filterContext)
     {
-        filterContext.Result = new BadRequestResult();
+        filterContext.Result = new StatusCodeResult(400);
     }
 }
 ```
 
-Setting the `Result` property short-circuits the rest of the request pipeline, so the request will immediately return code 400. You can then use `[RequireHttpsOrClose]` wherever you'd normally use `[RequireHttps]`.
-
-## Reject all insecure requests
-
-Unless you have clients that absolutely cannot connect over HTTPS, the best idea is to force HTTPS for all connections to your API. You could do this at the API gateway or reverse proxy layer (if you have one), but you can also do it with a small piece of ASP.NET Core middleware:
+Setting the `Result` property short-circuits the rest of the request pipeline, so the request will immediately return HTTP 400. You can then use `[RequireHttpsOrClose]` wherever you'd normally use `[RequireHttps]`:
 
 ```csharp
-public static class AbortIfNotHttpsApplicationBuilderExtensions
-{
-    public static IApplicationBuilder AbortIfNotHttps(this IApplicationBuilder app)
-    {
-        app.Use(async (context, next) =>
-        {
-            if (!context.Request.IsHttps)
-            {
-                context.Abort();
-            }
-
-            await next();
-        });
-
-        return app;
-    }
-}
+[RequireHttpsOrClose]
+public class HomeController
 ```
 
-Add this at the very top of your `Configure()` request pipeline in `Startup.cs`:
+Depending on your API semantics, you may want to return a different status code. Thanks to Tim VanFosson for this [contribution](https://github.com/nbarbettini/ApiSecurity/blob/master/ApiSecurity/RequireHttpsOrCloseAttribute.cs):
 
 ```csharp
-public void Configure(IApplicationBuilder app, IHostingEnvironment env)
-{
-    app.AbortIfNotHttps();
-
-    if (env.IsDevelopment())
-    // The rest of your pipeline...
-}
+[RequireHttpsOrClose(505)]
+public class HomeController
 ```
 
-Now all insecure requests will be rejected. Nice and easy!
+## What about HSTS?
+
+The [Strict-Transport-Security](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security) header instructs browsers to avoid connecting to your site over HTTP, even accidentally.
+
+HSTS is only useful for APIs if the API client observes the header. This could make sense if your API client is a browser (as in the case of a single-page app), but I think it's better to simply reject insecure connections in the first place. It certainly can't hurt to return the header, but don't rely on it as your _only_ method of enforcing HTTPS.
+
+For browser-based applications on the other hand (MVC, Razor and Razor Pages, and static pages that bootstrap SPAs), I'd strongly recommend it! The excellent [NWebSec package](https://docs.nwebsec.com/en/latest/nwebsec/Configuring-hsts.html) makes it easy to add HSTS to your pipeline.
 
 ## Easy API security extensions
 
-I've published these two classes as a small package called [Recaffeinate.ApiSecurity][as-nuget]. The source code is on [Github][as-github] if you want to take a look or add helpers of your own.
+I've published the above code as a small package called [Recaffeinate.ApiSecurity][as-nuget]. The source is on [Github][as-github] if you want to take a look or add helpers of your own.
 
 Let me know if you have any questions about API security in ASP.NET Core! Leave a comment below or chat with me on [Twitter][twitter].
 
