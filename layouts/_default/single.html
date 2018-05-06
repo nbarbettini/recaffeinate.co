@@ -21,17 +21,19 @@
       <div class="row">
         <div class="twelve columns">
           <article class="post">
-              {{ if .Params.page }}
-              <header>
-                <h1 class="post-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
-              </header>
-              {{ else }}
-              <header>
-                <h1 class="post-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
-                <span class="text-light">
-                  <time datetime="{{ .Date.Format "January 02, 2006" }}">{{ .Date.Format "January 02, 2006" }}</time>
-                </span>
-              </header>
+              {{ if not .Params.hideTitle}}
+                {{ if .Params.page }}
+                <header>
+                  <h1 class="post-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+                </header>
+                {{ else }}
+                <header>
+                  <h1 class="post-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+                  <span class="text-light">
+                    <time datetime="{{ .Date.Format "January 02, 2006" }}">{{ .Date.Format "January 02, 2006" }}</time>
+                  </span>
+                </header>
+                {{ end }}
               {{ end }}
               <section class="post-content">{{ .Content }}</section>
           </article>
