@@ -7,18 +7,22 @@ page: true
 hide: true
 ---
 
+<img src="/img/little-aspnetcore-book-mock.png" class="book-hero">
+
 ## The Little ASP.NET Core Book
 
-<img src="/img/little-aspnetcore-book-mock.png" class="headshot">
+I wrote this little (free!) book to help developers and people interested in web programming learn about ASP.NET Core 2.0, a new framework for building web applications and APIs.
 
-I wrote this short book to help developers and people interested in web programming learn about ASP.NET Core 2.0, a new framework for building web applications and APIs.
+<div class="clear"></div>
 
-This short (and free!) book is structured as a tutorial. You'll build an app from start to finish and learn:
+### A friendly introduction to web programming
+
+_The Little ASP.NET Core Book_ is structured as a tutorial. You'll build an app from start to finish and learn:
 
 * How to build a web app with the ASP.NET Core framework
 * The basics of the MVC (Model-View-Controller) pattern
 * How to read and write data to a database
-* How to add log-in, registration, and security
+* How to add login, registration, and security
 * How to deploy the app to the web
 
 Don't worry, you don't need to know anything about ASP.NET Core (or any of the above) to get started.
@@ -32,7 +36,7 @@ Read the book <a href="https://nbarbettini.gitbooks.io/little-asp-net-core-book/
     onclick="sendClickEvent('little-aspnetcore-book-mobi');">Mobi</a>, or <a href="https://www.gitbook.com/download/epub/book/nbarbettini/little-asp-net-core-book" 
     onclick="sendClickEvent('little-aspnetcore-book-epub');">ePub</a>. It's yours to share and copy as much as you'd like under the [Creative Commons Attribution](https://creativecommons.org/licenses/by/4.0/) license.
 
-The Little ASP.NET Core Book will be updated frequently and will always be completely free. The links above will always point to the latest version.
+_The Little ASP.NET Core Book_ will be updated frequently and will always be completely free. The links above will always point to the latest version.
 
 **Want to stay updated?** Subscribe [on Github](https://github.com/nbarbettini/little-aspnetcore-book) or <a href="http://eepurl.com/cXACob" target="_blank">via email</a>!
 

@@ -169,6 +169,14 @@ h6 {
   float: left;
 }
 
+.book-hero {
+  width: 160px;
+  margin-right: 25px;
+  margin-left: 5px;
+  margin-bottom: 35px;
+  float: left;
+}
+
 .intro-hero {
   margin-top: 8rem;
   margin-bottom: 3rem;
@@ -260,4 +268,8 @@ img {
 .hidden {
   position: absolute;
   left: -5000px;
+}
+
+.clear {
+  clear: both;
 }
