@@ -10,8 +10,16 @@ hideTitle: true
 
 #### Hi, I'm Nate.
 
-I'm an author, speaker, and self-taught developer who specializes in full-stack .NET and JavaScript. I'm passionate about helping people learn how to write clean, secure code. I'm currently a Senior Developer Advocate at [Okta](https://developer.okta.com), which gives me the opportunity to travel and speak about building secure applications.
+I'm an author, speaker, and self-taught developer who talks about .NET, JavaScript, and security. I'm passionate about helping people learn how to write clean, secure code.
 
-If you want to learn about ASP.NET Core, check out my video course [Deploying ASP.NET Core Applications](https://www.lynda.com/ASP-NET-tutorials/Deploying-ASP-NET-Core-Applications/513606-2.html) on Lynda, or ask me a question on [Twitter](https://twitter.com/nbarbettini). I also answer questions on [StackOverflow](https://stackoverflow.com/users/3191599/nate-barbettini).
+<div class="clear"></div>
 
-I'd be happy to speak at your company or meetup. Get in touch on Twitter or [LinkedIn](https://www.linkedin.com/in/nbarbettini/)!
+I'm currently a Product Manager at [Okta](https://developer.okta.com), where I help build tools that make it easy for developers to use the Okta API for security and user management in their applications.
+
+Besides blogging here, I've published a few courses on LinkedIn Learning:
+
+* [Deploying ASP.NET Core applications](https://www.linkedin.com/learning/deploying-asp-dot-net-core-applications)
+* [Building and securing RESTful APIs in ASP.NET Core](https://www.linkedin.com/learning/building-and-securing-restful-apis-in-asp-dot-net-core)
+* [Static site building with Hugo](https://www.linkedin.com/learning/learning-static-site-building-with-hugo)
+
+I'd be happy to speak at your company or meetup. Get in touch on [Twitter](https://twitter.com/nbarbettini) or [LinkedIn](https://www.linkedin.com/in/nbarbettini/)!
