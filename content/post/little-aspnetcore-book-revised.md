@@ -2,7 +2,8 @@
 title: "The Little ASP.NET Core Book, revised"
 description: "An updated release of my free ebook is now available!"
 date: 2018-05-06T15:37:38-07:00
-tags: ["dotnet", "little-aspnetcore-book"]
+tags: ["dotnet"]
+series: "The Little ASP.NET Core Book"
 banner: none
 postimage: "/img/little-aspnetcore-book-mock.png"
 ---

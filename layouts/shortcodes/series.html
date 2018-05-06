@@ -1,0 +1,5 @@
+<ul class="series">
+  {{ range (index .Site.Taxonomies.series (.Get 0)) }}
+   <li><a href="{{ .Permalink }}">{{ .Title}}</a></li>
+  {{ end }}
+</ul>

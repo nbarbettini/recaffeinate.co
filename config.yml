@@ -18,7 +18,10 @@ params:
       url: https://speakerdeck.com/nbarbettini
     - title: Github
       url: https://github.com/nbarbettini
+taxonomies:
+  tag: tags
+  series: series
 author:
   name: Nate Barbettini
   bio: Author, teacher, and full-stack developer. Microsoft MVP. California-born, Texas-raised.
-  email: nathanaelb@gmail.com
+  email: nate@barbettini.com

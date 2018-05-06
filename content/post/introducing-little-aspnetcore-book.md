@@ -2,7 +2,8 @@
 title: "Introducing the Little ASP.NET Core Book"
 description: Learn ASP.NET Core 2.0 with my free book
 date: 2017-09-19T07:05:38-07:00
-tags: ["dotnet", "little-aspnetcore-book"]
+tags: ["dotnet"]
+series: "The Little ASP.NET Core Book"
 banner: none
 ---
 

@@ -2,7 +2,8 @@
 title: "A little book update"
 description: "An update on the Little ASP.NET Core Book"
 date: 2017-11-20T07:15:46-08:00
-tags: ["dotnet", "little-aspnetcore-book"]
+tags: ["dotnet"]
+series: "The Little ASP.NET Core Book"
 banner: none
 ---
 
