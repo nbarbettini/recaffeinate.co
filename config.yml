@@ -8,7 +8,7 @@ params:
   description: the blog and website of Nate Barbettini
   googleAnalyticsTrackingId: UA-103155569-1
   keepReading: keep reading...
-  pageimage: /img/coffee.png
+  defaultPageImage: /img/coffee.png
   navLinks:
     - title: About
       url: /about

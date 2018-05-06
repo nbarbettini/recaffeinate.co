@@ -26,7 +26,7 @@ The Little ASP.NET Core Book is still a work-in-progress. There have been three 
 
 I'm tracking bugs and suggestions [on GitHub](https://github.com/nbarbettini/little-aspnetcore-book/issues) and am happy to accept pull requests.
 
-The latest version of the book is always available from this site, or the vanity URL [littleasp.net/book](http://littleasp.net/book).
+The latest version of the book is always available from this site, or the short URL [littleasp.net/book](http://littleasp.net/book).
 
 ## Looking ahead
 
