@@ -16,7 +16,7 @@ People from all over the world have read it to learn how to build modern web app
 
 <div class="clear"></div>
 
-Today I'm releasing an updated version that adds brand-new content and incorporates many suggestions from readers. Keep reading to learn more, or [download a copy][book-landing].
+Today, I'm releasing an updated version that adds brand-new content and incorporates many suggestions from readers. Keep reading to learn more, or [download a copy][book-landing]!
 
 <!--more-->
 

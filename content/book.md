@@ -1,7 +1,7 @@
 ---
 date: "2016-02-28T13:33:03-08:00"
 title: "The Little ASP.NET Core Book"
-description: "A short book to learn ASP.NET Core 2.0"
+description: "A friendly introduction to web programming and ASP.NET Core"
 postimage: "/img/little-aspnetcore-book-mock.png"
 page: true
 hide: true
