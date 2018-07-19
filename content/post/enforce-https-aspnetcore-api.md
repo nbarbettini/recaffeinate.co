@@ -76,7 +76,7 @@ In some APIs, you may want to allow insecure requests but return a status code l
 However, if this is the pattern your API needs, you can create a custom attribute that overrides the behavior of `[RequireHttps]`:
 
 ```csharp
-public class RequireHttpsOrClose : RequireHttpsAttribute
+public class RequireHttpsOrCloseAttribute : RequireHttpsAttribute
 {
     protected override void HandleNonHttpsRequest(AuthorizationFilterContext filterContext)
     {
