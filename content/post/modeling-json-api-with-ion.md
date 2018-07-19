@@ -133,8 +133,8 @@ If you want to get involved, the Ion Working Group is [on GitHub][ionwg-github] 
 [hal-def]: http://stateless.co/hal_specification.html
 [json-api-def]: http://jsonapi.org/
 [collection-json-def]: http://amundsen.com/media-types/collection/
-[ion-def]: https://ionwg.org
+[ion-def]: https://ionspec.org/
 [amazon-ion-def]: https://amzn.github.io/ion-docs/index.html
 [link-relations]: https://www.iana.org/assignments/link-relations/link-relations.xhtml#link-relations-1
-[ion-forms]: https://ionwg.org/#forms
+[ion-forms]: https://ionspec.org/#forms
 [ionwg-github]: https://github.com/ionwg/ion-doc/issues
