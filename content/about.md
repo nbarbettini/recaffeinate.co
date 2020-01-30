@@ -10,16 +10,12 @@ hideTitle: true
 
 #### Hi, I'm Nate.
 
-I'm an author, speaker, and self-taught developer who talks about .NET, JavaScript, and security. I'm passionate about helping people learn how to write clean, secure code.
+I build products and teams that solve problems. I love dissecting complexity and communicating solutions in a clear, approachable way.
+
+I'm a coder at heart. I've worked as a full-stack developer, technical author, SDK engineer, developer advocate, and technical product manager, and was a Microsoft MVP from 2017-2019.
 
 <div class="clear"></div>
 
-I'm currently a Product Manager at [Okta](https://developer.okta.com), where I help build tools that make it easy for developers to use the Okta API for security and user management in their applications.
+I'm the co-founder and CTO at [Cobbler](https://www.cobbler.io), where we're building a platform to help every employee get actionable insights from their budgets and spending.
 
-Besides blogging here, I've published a few courses on LinkedIn Learning:
-
-* [Deploying ASP.NET Core applications](https://www.linkedin.com/learning/deploying-asp-dot-net-core-applications)
-* [Building and securing RESTful APIs in ASP.NET Core](https://www.linkedin.com/learning/building-and-securing-restful-apis-in-asp-dot-net-core)
-* [Static site building with Hugo](https://www.linkedin.com/learning/learning-static-site-building-with-hugo)
-
-I'd be happy to speak at your company or meetup. Get in touch on [Twitter](https://twitter.com/nbarbettini) or [LinkedIn](https://www.linkedin.com/in/nbarbettini/)!
+Besides writing here, I've published [courses on LinkedIn Learning](https://www.linkedin.com/learning/instructors/nate-barbettini) and free [technical talks on YouTube](https://www.youtube.com/playlist?list=PLLRFyxYl_5YjpoPB1ryUbrCM7tmKFUNBV).
