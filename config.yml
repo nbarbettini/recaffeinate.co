@@ -4,7 +4,7 @@ metaDataFormat: yaml
 title: recaffeinate
 disqusShortname: recaffeinate
 params:
-  stylizedTitle: '<span class="color-lightgray">recaffei</span><span class="color-darkgray">nate</span> <img src="/img/coffee.png" class="title-coffee-icon">'
+  stylizedTitle: '<span class="color-lightgray">recaffei</span><span class="color-darkgray">nate</span>'
   description: the blog and website of Nate Barbettini
   googleAnalyticsTrackingId: UA-103155569-1
   keepReading: keep reading...
@@ -18,6 +18,8 @@ params:
       url: https://www.linkedin.com/learning/instructors/nate-barbettini
     - title: youtube
       url: https://www.youtube.com/playlist?list=PLLRFyxYl_5YjpoPB1ryUbrCM7tmKFUNBV
+    - title: twitter
+      url: https://twitter.com/nbarbettini
 taxonomies:
   tag: tags
   series: series
