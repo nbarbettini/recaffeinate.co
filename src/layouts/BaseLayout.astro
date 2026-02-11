@@ -1,0 +1,76 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  ogImage?: string;
+}
+
+const { title, description = "the blog and website of Nate Barbettini", ogImage } = Astro.props;
+const siteTitle = "recaffeinate";
+const isHome = title === siteTitle;
+const pageTitle = isHome ? `${siteTitle}, ${description}` : title;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImageURL = ogImage ? new URL(ogImage, Astro.site).href : new URL("/img/coffee.png", Astro.site).href;
+
+const navLinks = [
+  { title: "about", url: "/about/" },
+  { title: "book", url: "/book/" },
+  { title: "courses", url: "https://www.linkedin.com/learning/instructors/nate-barbettini" },
+  { title: "youtube", url: "https://www.youtube.com/playlist?list=PLLRFyxYl_5YjpoPB1ryUbrCM7tmKFUNBV" },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="author" content="Nate Barbettini" />
+    {description && <meta name="description" content={description} />}
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:creator" content="@nbarbettini" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:image" content={ogImageURL} />
+    {description && <meta property="og:description" content={description} />}
+
+    <title>{pageTitle}</title>
+
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico" />
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/rss.xml" />
+  </head>
+  <body>
+    <div class="site-wrapper">
+      <header class="site-header">
+        <h1 class="blog-title">
+          <a href="/"><span class="title-light">recaffei</span><span class="title-dark">nate</span></a>
+        </h1>
+        <nav>
+          <ul class="site-nav">
+            {navLinks.map((link) => (
+              <li><a href={link.url}>{link.title}</a></li>
+            ))}
+          </ul>
+        </nav>
+      </header>
+
+      <main>
+        <slot />
+      </main>
+
+      <footer class="site-footer">
+        <p>
+          &copy; {new Date().getFullYear()} &middot; Created with
+          <img src="/img/heart.png" class="heart-icon" alt="love" />
+          by <a href="/about/">Nate Barbettini</a>.
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
+
+<style is:global>
+  @import "../styles/global.css";
+</style>

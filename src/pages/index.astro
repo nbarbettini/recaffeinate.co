@@ -1,0 +1,49 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("post", ({ data }) => !data.draft && !data.hide))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+function readingTime(body: string): string {
+  const words = body.split(/\s+/).length;
+  const minutes = Math.ceil(words / 200);
+  return `${minutes} min read`;
+}
+---
+
+<BaseLayout title="recaffeinate">
+  <div class="intro">
+    <p>
+      <strong>Hi, I'm Nate. I write about code, security, and practical architecture.</strong>
+    </p>
+  </div>
+
+  <hr />
+
+  <ul class="post-list">
+    {posts.map((post, i) => (
+      <>
+        <li class="post-item">
+          <header>
+            <h2 class="post-title">
+              <a href={`/post/${post.id}/`}>{post.data.title}</a>
+            </h2>
+            <span class="post-meta">
+              <time datetime={post.data.date.toISOString()}>
+                {post.data.date.toLocaleDateString("en-US", {
+                  year: "numeric",
+                  month: "long",
+                  day: "2-digit",
+                })}
+              </time>
+              {" "}&middot;{" "}
+              {readingTime(post.body ?? "")}
+            </span>
+          </header>
+        </li>
+        {i < posts.length - 1 && <hr />}
+      </>
+    ))}
+  </ul>
+</BaseLayout>

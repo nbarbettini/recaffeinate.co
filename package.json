@@ -1,23 +1,17 @@
 {
   "name": "recaffeinate.co",
-  "private": true,
-  "version": "1.0.0",
-  "description": "This repository contains my personal website, built with [Hugo](https://www.gohugo.io).",
+  "type": "module",
+  "version": "2.0.0",
   "scripts": {
-    "test": "hugo; node test-server.js"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nbarbettini/recaffeinate.co.git"
-  },
-  "author": "Nate Barbettini",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/nbarbettini/recaffeinate.co/issues"
-  },
-  "homepage": "https://github.com/nbarbettini/recaffeinate.co#readme",
-  "devDependencies": {
-    "finalhandler": "^1.1.0",
-    "serve-static": "^1.13.1"
+  "dependencies": {
+    "@astrojs/cloudflare": "^12.6.12",
+    "@astrojs/mdx": "^4.3.13",
+    "@astrojs/rss": "^4.0.15",
+    "astro": "^5.17.1"
   }
 }
