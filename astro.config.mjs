@@ -5,7 +5,7 @@ import mdx from "@astrojs/mdx";
 export default defineConfig({
   site: "https://www.recaffeinate.co",
   output: "static",
-  adapter: cloudflare(),
+  adapter: cloudflare({ imageService: "compile" }),
   integrations: [mdx()],
   markdown: {
     shikiConfig: {
