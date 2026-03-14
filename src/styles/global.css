@@ -192,8 +192,6 @@ hr::after {
   flex-wrap: wrap;
   gap: 1rem;
   margin-bottom: 3rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid #eee;
 }
 
 .blog-title {

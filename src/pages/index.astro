@@ -10,6 +10,23 @@ function readingTime(body: string): string {
   const minutes = Math.ceil(words / 200);
   return `${minutes} min read`;
 }
+
+function getExcerpt(body: string): string {
+  // Strip frontmatter, HTML tags, and markdown formatting, then take first ~200 chars
+  const cleaned = body
+    .replace(/^---[\s\S]*?---/, "")
+    .replace(/<[^>]+>/g, "")
+    .replace(/!\[.*?\]\(.*?\)/g, "")
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
+    .replace(/\[([^\]]+)\]\[[^\]]*\]/g, "$1")
+    .replace(/#{1,6}\s+/g, "")
+    .replace(/[*_`~]+/g, "")
+    .replace(/\n+/g, " ")
+    .trim();
+  const truncated = cleaned.slice(0, 200);
+  const lastSpace = truncated.lastIndexOf(" ");
+  return (lastSpace > 150 ? truncated.slice(0, lastSpace) : truncated) + "...";
+}
 ---
 
 <BaseLayout title="recaffeinate">
@@ -41,6 +58,7 @@ function readingTime(body: string): string {
               {readingTime(post.body ?? "")}
             </span>
           </header>
+          <p class="post-excerpt">{getExcerpt(post.body ?? "")}</p>
         </li>
         {i < posts.length - 1 && <hr />}
       </>
