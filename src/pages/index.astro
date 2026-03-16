@@ -12,27 +12,48 @@ function readingTime(body: string): string {
   return `${minutes} min read`;
 }
 
-function getPreviewMarkdown(body: string): { markdown: string; truncated: boolean } {
+function getPreviewMarkdown(body: string, postimage?: string): { markdown: string; truncated: boolean } {
   const text = body.replace(/^---[\s\S]*?---\s*/, "");
+
+  // Extract reference link definitions from the full body so they resolve in the preview
+  const refDefs = [...text.matchAll(/^\[([^\]]+)\]:\s+.+$/gm)].map((m) => m[0]);
+
+  let preview: string;
+  let truncated: boolean;
 
   // Support <!--more--> marker
   const moreIndex = text.indexOf("<!--more-->");
   if (moreIndex !== -1) {
-    return { markdown: text.slice(0, moreIndex).trim(), truncated: true };
+    preview = text.slice(0, moreIndex).trim();
+    truncated = true;
+  } else {
+    // Split at first ## heading
+    const headingMatch = text.match(/^## /m);
+    if (headingMatch?.index != null && headingMatch.index > 0) {
+      preview = text.slice(0, headingMatch.index).trim();
+      truncated = true;
+    } else {
+      // Short post — show everything
+      preview = text.trim();
+      truncated = false;
+    }
   }
 
-  // Split at first ## heading
-  const headingMatch = text.match(/^## /m);
-  if (headingMatch?.index != null && headingMatch.index > 0) {
-    return { markdown: text.slice(0, headingMatch.index).trim(), truncated: true };
+  // Strip images that duplicate the postimage
+  if (postimage) {
+    preview = preview.replace(new RegExp(`<img[^>]*src=["']${postimage.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}["'][^>]*>`, 'g'), '');
   }
 
-  // Short post — show everything
-  return { markdown: text.trim(), truncated: false };
+  // Append reference definitions so reference-style links resolve
+  if (refDefs.length > 0) {
+    preview = preview + "\n\n" + refDefs.join("\n");
+  }
+
+  return { markdown: preview.trim(), truncated };
 }
 
 const postPreviews = await Promise.all(posts.map(async (post) => {
-  const { markdown, truncated } = getPreviewMarkdown(post.body ?? "");
+  const { markdown, truncated } = getPreviewMarkdown(post.body ?? "", post.data.postimage);
   const html = await marked.parse(markdown);
   return { post, html, truncated };
 }));
