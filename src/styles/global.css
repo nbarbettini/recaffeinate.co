@@ -187,7 +187,7 @@ hr::after {
 /* Site header */
 .site-header {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 1rem;
@@ -226,8 +226,9 @@ hr::after {
   list-style: none;
   margin: 0;
   padding: 0;
+  padding-top: 0.25rem;
   font-family: "Open Sans", sans-serif;
-  font-size: 0.85rem;
+  font-size: 1rem;
   font-weight: 700;
 }
 
@@ -243,7 +244,7 @@ hr::after {
 /* Hero / intro */
 .intro {
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 4rem;
   font-size: 1.05rem;
 }
 
@@ -360,9 +361,9 @@ hr::after {
 
 .headshot {
   width: 140px;
-  margin: 0 30px 15px 0;
+  margin: 0 30px 12px 0;
   float: left;
-  border-radius: 4px;
+  border-radius: 5px;
 }
 
 .book-hero {
@@ -427,7 +428,7 @@ hr::after {
 
   .site-header {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 0.75rem;
   }
 

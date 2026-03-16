@@ -14,8 +14,6 @@ const ogImageURL = ogImage ? new URL(ogImage, Astro.site).href : new URL("/img/c
 
 const navLinks = [
   { title: "about", url: "/about/" },
-  { title: "book", url: "/book/" },
-  { title: "courses", url: "https://www.linkedin.com/learning/instructors/nate-barbettini" },
   { title: "youtube", url: "https://www.youtube.com/playlist?list=PLLRFyxYl_5YjpoPB1ryUbrCM7tmKFUNBV" },
 ];
 ---
@@ -62,8 +60,7 @@ const navLinks = [
 
       <footer class="site-footer">
         <p>
-          &copy; {new Date().getFullYear()} &middot; Created with
-          <img src="/img/heart.png" class="heart-icon" alt="love" />
+          &copy; {new Date().getFullYear()} &middot; Created with ☕
           by <a href="/about/">Nate Barbettini</a>.
         </p>
       </footer>

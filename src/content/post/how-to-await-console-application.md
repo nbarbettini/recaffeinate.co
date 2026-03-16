@@ -10,6 +10,8 @@ I'm a big fan of the async/await pattern introduced in C#. It's one of the best 
 Every once in a while, I need to run some async code in a .NET command-line application, but the Console Application template in Visual Studio makes it annoyingly difficult to do.
 
 
+## The entry point problem
+
 Here's the problem: the entry point of a C# console application is `static void Main()`. In order to await asynchronous code, the method must be marked with `async`, but doing this results in a compiler error:
 
 > an entry point cannot be marked with the 'async' modifier

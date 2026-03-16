@@ -62,11 +62,9 @@ const postPreviews = await Promise.all(posts.map(async (post) => {
 <BaseLayout title="recaffeinate">
   <div class="intro">
     <p>
-      <strong>Hi, I'm Nate. I write about code, security, and practical architecture.</strong>
+      <strong>Hi, I'm <a href="/about">Nate Barbettini</a>. I write about AI, security, and practical architecture.</strong>
     </p>
   </div>
-
-  <hr />
 
   <ul class="post-list">
     {postPreviews.map(({ post, html, truncated }, i) => (
