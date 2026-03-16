@@ -3,6 +3,7 @@ title: "Enforce HTTPS correctly in ASP.NET Core APIs"
 description: "How to correctly and securely enforce HTTPS in an ASP.NET Core Web API"
 date: 2018-03-28T21:07:39-07:00
 tags: ["dotnet"]
+hide: true
 ---
 
 Most ASP.NET developers are familiar with the `[RequireHttps]` attribute that forces HTTPS connections for a particular route or controller. However, if you're building an API in ASP.NET Core, the [official documentation][docs-enforce-ssl] includes this warning:
