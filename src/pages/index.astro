@@ -58,7 +58,17 @@ function getExcerpt(body: string): string {
               {readingTime(post.body ?? "")}
             </span>
           </header>
-          <p class="post-excerpt">{getExcerpt(post.body ?? "")}</p>
+          <div class="post-body">
+            {post.data.postimage && (
+              <img
+                src={post.data.postimage}
+                alt=""
+                class="post-image"
+                loading="lazy"
+              />
+            )}
+            <p class="post-excerpt">{getExcerpt(post.body ?? "")}</p>
+          </div>
         </li>
         {i < posts.length - 1 && <hr />}
       </>
