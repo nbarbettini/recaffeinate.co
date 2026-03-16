@@ -302,17 +302,29 @@ hr::after {
 .post-excerpt {
   margin-top: 0.5rem;
   font-size: 0.95rem;
-  color: #555;
   line-height: 1.7;
 }
 
-.post-excerpt p {
-  margin: 0;
+.post-excerpt p:first-child {
+  margin-top: 0;
+}
+
+.post-excerpt p:last-child {
+  margin-bottom: 0;
+}
+
+.post-excerpt blockquote {
+  border-left: 3px solid #ccc;
+  margin: 1rem 0;
+  padding: 0.25rem 1rem;
+  color: #555;
+  font-style: italic;
 }
 
 .keep-reading {
   font-size: 0.85rem;
   font-family: "Open Sans", sans-serif;
+  text-align: right;
 }
 
 /* Single post */

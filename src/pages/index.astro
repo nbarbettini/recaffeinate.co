@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
+import { marked } from "marked";
 
 const posts = (await getCollection("post", ({ data }) => !data.draft && !data.hide))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
@@ -11,22 +12,30 @@ function readingTime(body: string): string {
   return `${minutes} min read`;
 }
 
-function getExcerpt(body: string): string {
-  // Strip frontmatter, HTML tags, and markdown formatting, then take first ~200 chars
-  const cleaned = body
-    .replace(/^---[\s\S]*?---/, "")
-    .replace(/<[^>]+>/g, "")
-    .replace(/!\[.*?\]\(.*?\)/g, "")
-    .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
-    .replace(/\[([^\]]+)\]\[[^\]]*\]/g, "$1")
-    .replace(/#{1,6}\s+/g, "")
-    .replace(/[*_`~]+/g, "")
-    .replace(/\n+/g, " ")
-    .trim();
-  const truncated = cleaned.slice(0, 200);
-  const lastSpace = truncated.lastIndexOf(" ");
-  return (lastSpace > 150 ? truncated.slice(0, lastSpace) : truncated) + "...";
+function getPreviewMarkdown(body: string): { markdown: string; truncated: boolean } {
+  const text = body.replace(/^---[\s\S]*?---\s*/, "");
+
+  // Support <!--more--> marker
+  const moreIndex = text.indexOf("<!--more-->");
+  if (moreIndex !== -1) {
+    return { markdown: text.slice(0, moreIndex).trim(), truncated: true };
+  }
+
+  // Split at first ## heading
+  const headingMatch = text.match(/^## /m);
+  if (headingMatch?.index != null && headingMatch.index > 0) {
+    return { markdown: text.slice(0, headingMatch.index).trim(), truncated: true };
+  }
+
+  // Short post — show everything
+  return { markdown: text.trim(), truncated: false };
 }
+
+const postPreviews = await Promise.all(posts.map(async (post) => {
+  const { markdown, truncated } = getPreviewMarkdown(post.body ?? "");
+  const html = await marked.parse(markdown);
+  return { post, html, truncated };
+}));
 ---
 
 <BaseLayout title="recaffeinate">
@@ -39,7 +48,7 @@ function getExcerpt(body: string): string {
   <hr />
 
   <ul class="post-list">
-    {posts.map((post, i) => (
+    {postPreviews.map(({ post, html, truncated }, i) => (
       <>
         <li class="post-item">
           <header>
@@ -54,8 +63,6 @@ function getExcerpt(body: string): string {
                   day: "2-digit",
                 })}
               </time>
-              {" "}&middot;{" "}
-              {readingTime(post.body ?? "")}
             </span>
           </header>
           <div class="post-body">
@@ -67,7 +74,13 @@ function getExcerpt(body: string): string {
                 loading="lazy"
               />
             )}
-            <p class="post-excerpt">{getExcerpt(post.body ?? "")}</p>
+            <div class="post-excerpt" set:html={html} />
+            {truncated && (
+              <p class="keep-reading">
+                <a href={`/post/${post.id}/`}>keep reading...</a>
+                {" "}({readingTime(post.body ?? "")})
+              </p>
+            )}
           </div>
         </li>
         {i < posts.length - 1 && <hr />}
