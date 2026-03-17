@@ -7,9 +7,9 @@ tags: ["mcp", "mcpdebugger"]
 
 <img src="/img/post/introducing-mcp-debugger/mcp-logo-sm.png" class="headshot">
 
-I've been building and testing Model Context Protocol (MCP) servers in production for the past year. One thing has become painfully clear: there's a huge gap between a server that "implements MCP" and one that agents can actually use reliably.
+I've spent the past year deep in the hardest parts of Model Context Protocol: authorization flows, security, and real client behavior. I keep seeing the same failure patterns over and over. Subtle bugs, runtime failures, and broken auth flows trip up even the best teams.
 
-If you've ever wired up an MCP server and wondered why your agent can't seem to call any tools, you're not alone!
+There's a huge gap today between a server that "implements MCP" and one that clients can actually use. If you've ever wired up an MCP server and wondered why your agent can't use it properly, you're not alone!
 
 I got tired of debugging these problems by hand, so I built <a href="https://mcpdebugger.dev" target="_blank">MCP Debugger</a> to do it for me.
 
@@ -24,7 +24,7 @@ In my experience, things often go wrong in a few common areas:
 * **Tool metadata is missing or ambiguous.** A server might return tools without robust descriptions or without parameter types, so the agent has to guess what to pass... and guesses wrong.
 * **Frameworks have spec gaps.** Most devs use an MCP server framework to jump-start their projects, but some frameworks have incomplete spec coverage that the developer never notices until a client tries to connect in the wild.
 
-To make matters worse, the MCP spec has been evolving quickly, especially around authorization and security. These changes are **good**, but keeping up with a moving target is hard, and the failure modes are subtle.
+To make matters worse, the MCP spec has been evolving quickly, especially around authorization and security. These changes are _good_, but keeping up with a moving target is hard and many tradeoffs are not yet well-documented.
 
 
 ## Introducing MCP Debugger
@@ -41,7 +41,7 @@ The result is a report that tells you what would cause an agent to fail... befor
 
 ## Try it out
 
-Head over to <a href="https://mcpdebugger.dev" target="_blank">mcpdebugger.dev</a>, paste your server URL, and get a report in a few seconds.
+Head over to <a href="https://mcpdebugger.dev" target="_blank">mcpdebugger.dev</a>, paste your server URL, and get a report in a few seconds:
 
 <a href="https://mcpdebugger.dev" target="_blank"><img src="/img/post/introducing-mcp-debugger/screenshot.webp" alt="MCP Debugger report screenshot: B grade"></a>
 
