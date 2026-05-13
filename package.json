@@ -9,10 +9,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^12.6.12",
-    "@astrojs/mdx": "^4.3.13",
+    "@astrojs/cloudflare": "^13.5.1",
+    "@astrojs/mdx": "^5.0.5",
     "@astrojs/rss": "^4.0.15",
-    "astro": "^5.17.1",
+    "astro": "^6.3.2",
     "marked": "^17.0.4"
   }
 }
