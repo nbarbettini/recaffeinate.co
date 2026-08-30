@@ -6,7 +6,7 @@ interface Props {
 }
 
 const { title, description = "the blog and website of Nate Barbettini", ogImage } = Astro.props;
-const siteTitle = "recaffeinate";
+const siteTitle = "caffeinate";
 const isHome = title === siteTitle;
 const pageTitle = isHome ? `${siteTitle}, ${description}` : title;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -43,7 +43,7 @@ const navLinks = [
     <div class="site-wrapper">
       <header class="site-header">
         <h1 class="blog-title">
-          <a href="/"><span class="title-light">recaffei</span><span class="title-dark">nate</span></a>
+          <a href="/"><span class="title-light">caffei</span><span class="title-dark">nate</span></a>
         </h1>
         <nav>
           <ul class="site-nav">

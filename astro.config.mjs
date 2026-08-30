@@ -3,7 +3,7 @@ import cloudflare from "@astrojs/cloudflare";
 import mdx from "@astrojs/mdx";
 
 export default defineConfig({
-  site: "https://www.recaffeinate.co",
+  site: "https://caffeinate.blog",
   output: "static",
   adapter: cloudflare({ imageService: "compile" }),
   integrations: [mdx()],
