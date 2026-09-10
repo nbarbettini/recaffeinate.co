@@ -9,7 +9,7 @@ Model Context Protocol has had an incredible run over the past two years. If you
 
 Many videos and posts describe the _what_ of MCP, and the reasons it's exciting. But developers I talk to are often confused about the _why_ and _how_: Is MCP just a special kind of API? Why do we need a new API for agents, anyway? Can't agents just call regular APIs? Why does MCP drag OAuth and all its jargon into the picture?
 
-In this post, I'll break down the _why_ and _how_ of MCP in plain English. You don't need to have a background in agents or model training to follow along, just basic software development concepts.
+In this post, I'll break down the _why_ and _how_ of MCP in plain English. You don't need to have a background in agents or models to follow along.
 
 **TL;DR** — Because of how they work, AI models (LLMs) need an API to reach the outside world via your application code. MCP standardizes how _your application code_ does this, so you can reuse integrations instead of writing each one yourself.
 
