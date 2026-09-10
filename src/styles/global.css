@@ -341,6 +341,11 @@ hr::after {
   font-size: 1.05rem;
 }
 
+.post-content pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
 .post-content img {
   max-width: 600px;
 }
