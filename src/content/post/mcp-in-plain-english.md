@@ -5,7 +5,9 @@ date: 2026-09-09T08:55:00-07:00
 tags: ["mcp"]
 ---
 
-Model Context Protocol has had an incredible run over the past two years. If you build software (or just use it), you've no doubt heard about MCP. You may have connected an agent like Claude Code to an MCP server to give it new abilities.
+<img src="/img/post/mcp-in-plain-english/mcp-plain-english-hero.webp" class="headshot">
+
+Model Context Protocol has had an incredible run over the past two years. If you build software (or just use it), you've no doubt heard about MCP. You may have connected an agent like `Claude Code to an MCP server to give it new abilities.
 
 Many videos and posts describe the _what_ of MCP, and the reasons it's exciting. But developers I talk to are often confused about the _why_ and _how_: Is MCP just a special kind of API? Why do we need a new API for agents, anyway? Can't agents just call regular APIs? Why does MCP drag OAuth and all its jargon into the picture?
 
