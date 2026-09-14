@@ -4,3 +4,9 @@ name = "recaffeinate-co"
 compatibility_date = "2025-01-01"
 
 pages_build_output_dir = "./dist"
+
+[vars]
+IS_PREVIEW = "false"
+
+[env.preview.vars]
+IS_PREVIEW = "true"

@@ -11,6 +11,8 @@ const post = defineCollection({
     series: z.array(z.string()).optional(),
     draft: z.boolean().optional().default(false),
     postimage: z.string().optional(),
+    previewimage: z.string().optional(),
+    previewimagealt: z.string().optional(),
     banner: z.string().optional(),
     hide: z.boolean().optional().default(false),
     page: z.boolean().optional().default(false),
