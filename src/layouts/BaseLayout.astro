@@ -1,16 +1,36 @@
 ---
+import sharp from "sharp";
+import { resolve, sep } from "node:path";
+
 interface Props {
   title: string;
   description?: string;
   ogImage?: string;
+  ogImageAlt?: string;
+  ogType?: "website" | "article";
 }
 
-const { title, description = "the blog and website of Nate Barbettini", ogImage } = Astro.props;
+const { title, description = "the blog and website of Nate Barbettini", ogImage, ogImageAlt, ogType = "website" } = Astro.props;
 const siteTitle = "caffeinate";
 const isHome = title === siteTitle;
 const pageTitle = isHome ? `${siteTitle}, ${description}` : title;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const ogImageURL = ogImage ? new URL(ogImage, Astro.site).href : new URL("/img/coffee.png", Astro.site).href;
+const imageURL = new URL(ogImageURL);
+let imageWidth: number | undefined;
+let imageHeight: number | undefined;
+
+// Local public assets are inspected at build time; remote images keep dimensions unspecified.
+if (imageURL.origin === Astro.site?.origin) {
+  const publicDirectory = resolve("public");
+  const imagePath = resolve(publicDirectory, `.${decodeURIComponent(imageURL.pathname)}`);
+  if (!imagePath.startsWith(publicDirectory + sep)) throw new Error("Invalid sharing image path");
+  const metadata = await sharp(imagePath).metadata();
+  imageWidth = metadata.autoOrient.width;
+  imageHeight = metadata.autoOrient.height;
+}
+const largeImage = imageWidth && imageHeight && imageWidth >= 300 && imageHeight >= 157 && imageWidth > imageHeight;
+const imageAlt = ogImage ? ogImageAlt : "A cup of coffee";
 
 const navLinks = [
   { title: "about", url: "/about/" },
@@ -27,14 +47,20 @@ const navLinks = [
     <meta name="author" content="Nate Barbettini" />
     {description && <meta name="description" content={description} />}
 
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content={largeImage ? "summary_large_image" : "summary"} />
     <meta name="twitter:creator" content="@nbarbettini" />
     <meta property="og:url" content={canonicalURL} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content={siteTitle} />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:image" content={ogImageURL} />
+    {imageAlt && <meta property="og:image:alt" content={imageAlt} />}
+    {imageWidth && <meta property="og:image:width" content={imageWidth} />}
+    {imageHeight && <meta property="og:image:height" content={imageHeight} />}
     {description && <meta property="og:description" content={description} />}
 
     <title>{pageTitle}</title>
+    <link rel="canonical" href={canonicalURL} />
 
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico" />
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/rss.xml" />
