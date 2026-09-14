@@ -31,3 +31,15 @@ Cloudflare Pages uses the following build settings:
 - Build output directory: `dist`
 
 Use Bun for dependency management and keep `bun.lock` up to date.
+
+Preview builds set `IS_PREVIEW="true"` through `[env.preview.vars]` in
+`wrangler.toml` and use Cloudflare's `CF_PAGES_URL` for `og:url` and local
+sharing-image URLs. Canonical links always use `https://caffeinate.blog`.
+Production and ordinary local builds use the production domain for sharing.
+Preview builds fail if the deployment URL is missing or invalid.
+
+To check preview metadata locally:
+
+```sh
+IS_PREVIEW=true CF_PAGES_URL=https://example.recaffeinate-co.pages.dev bun run build
+```

@@ -15,13 +15,19 @@ const siteTitle = "caffeinate";
 const isHome = title === siteTitle;
 const pageTitle = isHome ? `${siteTitle}, ${description}` : title;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const ogImageURL = ogImage ? new URL(ogImage, Astro.site).href : new URL("/img/coffee.png", Astro.site).href;
-const imageURL = new URL(ogImageURL);
+const sharingOrigin = import.meta.env.SHARING_ORIGIN;
+const sharingURL = new URL(Astro.url.pathname, sharingOrigin);
+// Identify local assets against the canonical site before selecting their public origin.
+const imageURL = new URL(ogImage ?? "/img/coffee.png", Astro.site);
+const isLocalImage = imageURL.origin === Astro.site?.origin;
+const ogImageURL = isLocalImage
+  ? new URL(imageURL.pathname + imageURL.search + imageURL.hash, sharingOrigin).href
+  : imageURL.href;
 let imageWidth: number | undefined;
 let imageHeight: number | undefined;
 
 // Local public assets are inspected at build time; remote images keep dimensions unspecified.
-if (imageURL.origin === Astro.site?.origin) {
+if (isLocalImage) {
   const publicDirectory = resolve("public");
   const imagePath = resolve(publicDirectory, `.${decodeURIComponent(imageURL.pathname)}`);
   if (!imagePath.startsWith(publicDirectory + sep)) throw new Error("Invalid sharing image path");
@@ -49,7 +55,7 @@ const navLinks = [
 
     <meta name="twitter:card" content={largeImage ? "summary_large_image" : "summary"} />
     <meta name="twitter:creator" content="@nbarbettini" />
-    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:url" content={sharingURL} />
     <meta property="og:type" content={ogType} />
     <meta property="og:site_name" content={siteTitle} />
     <meta property="og:title" content={pageTitle} />
