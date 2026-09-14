@@ -5,28 +5,36 @@ date: 2026-08-29T08:55:00-07:00
 tags: ["mcp", "oauth", "security"]
 ---
 
-When I talk to engineering teams about MCP, a common question I hear is: **Why does MCP use OAuth?**
+An engineer I talked to recently described OAuth as MCP's biggest mistake. Why does MCP use OAuth at all? OAuth is complicated and jargony (true), and it feels like overkill if all you want to do is give some tools or data to an agent. Wouldn't it be simpler to just use API keys?
 
-One engineer I talked to recently described OAuth as MCP's biggest mistake. OAuth is complicated and jargony (true), and it feels like overkill if all you want to do is give some tools or data to an agent. Wouldn't it be simpler to just use API keys?
-
-Yes it would! MCP _would_ be simpler without OAuth, but much less useful. I'll explain why.
+It might be! MCP _could_ be simpler without OAuth, but less useful. I'll explain why.
 
 
-## Building the open world
+## Building for the open world
 
-MCP's [grand vision](/post/mcp-open-world-vision) is an open world where clients and servers can communicate with each other as easily as entering a URL.
+MCP's [big vision](/post/mcp-open-world-vision) is that clients and servers that have never met can communicate with each other. Paste a URL into your agent and go - no prior setup required.
 
-This is how web browsers work: signing into google.com doesn't require anything beyond entering an address. For MCP, it means general-purpose clients like Claude and ChatGPT and Goose can connect to any server that speaks MCP.
+This is how web browsers work: visiting google.com doesn't require anything beyond entering an address. For MCP, it means general-purpose clients like Claude and Goose can connect to any server that speaks MCP.
 
-There are two cases:
+Broadly speaking, there are two factors to solve for:
+- Does your server support general-purpose clients, or custom clients?
+- Does your server need authentication(*), because it deals with private data?
+
+| | General-purpose clients | Custom clients |
+|---|---|---|
+| Not authenticated | Simple | Simple |
+| Authenticated |  | Often provided by the organization |
+
+
 1. MCP servers that don't need authentication, like a weather server that everyone can access.
-2. MCP servers that require authentication, because they deal with _your_ data and you need to sign in first.
+2. MCP servers that need authentication, because they deal with _your_ data and you need to sign in first.
+
 
 There is one other case that's important to discuss first: Not all MCP servers **need** to be general-purpose!
 
 ## Auth by any other name
 
-If you do want the Claudes and Gooses of the world to connect to your server, _and_ your server doesn't just handle public data, then MCP needs a way for clients to authenticate(*) to servers. Clients can't have special code or requirements built into them for each server, because that won't scale. It also won't scale to ask users (especially non-technical users) to copy and paste an API key for your server into their agent.
+If you do want the Claudes and Gooses of the world to connect to your server, _and_ your server doesn't just handle public data, then MCP needs a way for clients to authenticate to servers. Clients can't have special code or requirements built into them for each server, because that won't scale. It also won't scale to ask users (especially non-technical users) to copy and paste an API key for your server into their agent.
 
 So, authentication must be **standardized** (clients and servers can agree on a way to do it) and **discoverable** (clients can ask a server what it requires before connecting). But couldn't API keys work in a standard, discoverable way?
 
