@@ -18,7 +18,7 @@ const { Content } = await render(post);
   title={post.data.title}
   date={post.data.date}
   description={post.data.description}
-  ogImage={post.data.postimage}
+  ogImage={post.data.previewimage ?? post.data.postimage}
 >
   <Content />
 </PostLayout>

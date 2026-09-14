@@ -1,6 +1,8 @@
 ---
 title: "Model Context Protocol in plain English"
 description: "Why do we need a new protocol for agent communication?"
+previewimage: "/img/post/mcp-in-plain-english/mcp-plain-english-social.webp"
+previewimagealt: "TODO: Understand MCP. remove jargon, plain English"
 date: 2026-09-09T08:55:00-07:00
 tags: ["mcp"]
 ---
