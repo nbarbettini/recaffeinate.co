@@ -5,18 +5,20 @@ previewimage: "/img/post/mcp-in-plain-english/mcp-plain-english-preview.webp"
 previewimagealt: "TODO: Understand MCP. remove jargon, plain English"
 date: 2026-09-09T08:55:00-07:00
 tags: ["mcp"]
+series:
+  name: "Model Context Protocol explained"
+  order: 0
 ---
 
 <img src="/img/post/mcp-in-plain-english/mcp-plain-english-hero.webp" class="headshot">
 
-Model Context Protocol has had an incredible run over the past two years. If you build software (or just use it), you've no doubt heard about MCP. You may have connected an agent like `Claude Code to an MCP server to give it new abilities.
+Model Context Protocol has had an incredible run over the past two years. If you build software (or just use it), you've no doubt heard about MCP. You may have connected an agent like Cursor or Claude Code to an MCP server to give it new abilities.
 
 Many videos and posts describe the _what_ of MCP, and the reasons it's exciting. But developers I talk to are often confused about the _why_ and _how_: Is MCP just a special kind of API? Why do we need a new API for agents, anyway? Can't agents just call regular APIs? Why does MCP drag OAuth and all its jargon into the picture?
 
 In this post, I'll break down the _why_ and _how_ of MCP in plain English. You don't need to have a background in agents or models to follow along.
 
 **TL;DR** — Because of how they work, AI models (LLMs) need an API to reach the outside world via your application code. MCP standardizes how _your application code_ does this, so you can reuse integrations instead of writing each one yourself.
-
 
 ## The clever intern in a strange office
 
@@ -98,7 +100,6 @@ Intern:
 
 You are turning a profit of about $25.6K.
 ```
-
 
 In the mid-20s, LLMs became very good at writing text. They are trained on text, and can input and output text (and sometimes images). Generating a text response does not, by itself, look up a forecast or send an email. For that, the model needs software outside it to carry out an action.
 

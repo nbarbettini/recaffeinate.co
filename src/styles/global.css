@@ -358,6 +358,27 @@ hr::after {
   list-style: decimal;
 }
 
+.post-content table {
+  width: min(700px, calc(100vw - 2rem));
+  margin: 1.5rem 0 1.5rem 50%;
+  transform: translateX(-50%);
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.post-content th,
+.post-content td {
+  padding: 0.65rem 0.75rem;
+  border: 1px solid #e1e1e1;
+  text-align: left;
+  vertical-align: top;
+}
+
+.post-content th {
+  background: #fafafa;
+}
+
 /* About / Book pages */
 .page-content {
   font-size: 1.05rem;

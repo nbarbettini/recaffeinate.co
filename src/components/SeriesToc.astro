@@ -1,0 +1,95 @@
+---
+interface SeriesItem {
+  title: string;
+  href: string;
+  order: number;
+  current: boolean;
+}
+
+interface Props {
+  name: string;
+  items: SeriesItem[];
+}
+
+const { name, items } = Astro.props;
+---
+
+<aside class="series-toc" aria-labelledby="series-toc-title">
+  <h2 id="series-toc-title">Part of a series: <strong>{name}</strong></h2>
+  <ol>
+    {items.map((item) => (
+      <li class:list={{ current: item.current }}>
+        <span class="series-part">Part {item.order}</span>
+        {item.current ? (
+          <strong aria-current="page">
+            {item.title} <span class="current-label">(you are here)</span>
+          </strong>
+        ) : (
+          <a href={item.href}>{item.title}</a>
+        )}
+      </li>
+    ))}
+  </ol>
+</aside>
+
+<style>
+  .series-toc {
+    margin: 0 0 2rem;
+    padding: 1rem 1.25rem;
+    border: 1px solid #e5e5e5;
+    border-left: 3px solid #b9c0c3;
+    border-radius: 6px;
+    background: #fafafa;
+  }
+
+  h2 {
+    margin: 0 0 0.75rem;
+    font-size: 1.15rem;
+  }
+
+  ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    display: grid;
+    grid-template-columns: 4.25rem 1fr;
+    gap: 0.75rem;
+    margin: 0.35rem 0;
+    line-height: 1.45;
+  }
+
+  .series-part {
+    color: #68747a;
+    font-family: "Open Sans", sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    line-height: 1.9;
+    text-transform: uppercase;
+  }
+
+  .current strong {
+    color: #3a4145;
+  }
+
+  .current-label {
+    color: #68747a;
+    font-size: 0.85em;
+    font-weight: 400;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 480px) {
+    li {
+      grid-template-columns: 1fr;
+      gap: 0;
+      margin: 0.65rem 0;
+    }
+
+    .series-part {
+      line-height: 1.4;
+    }
+  }
+</style>
