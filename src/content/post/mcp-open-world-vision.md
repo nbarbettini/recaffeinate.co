@@ -1,6 +1,8 @@
 ---
 title: "MCP's big, open-world vision"
-description: "Understanding why the protocol is for strangers and the critical role that extensions play"
+description: "Understand why the protocol is designed for strangers, and the critical role that extensions play"
+previewimage: "/img/post/mcp-open-world-vision/mcp-open-world-preview.webp"
+previewimagealt: "A hand-drawn client and server connecting through MCP across a globe"
 date: 2026-09-12T08:55:00-07:00
 tags: ["mcp"]
 series:
@@ -10,6 +12,8 @@ canonical: "https://aaif.io/blog/mcp-big-open-world-vision"
 ---
 
 _This article was originally published on the [Agentic AI Foundation blog](https://aaif.io/blog/mcp-big-open-world-vision)._
+
+<img src="/img/post/mcp-open-world-vision/mcp-open-world-square.webp" class="headshot">
 
 You don't need to fully understand [how MCP works](/post/mcp-in-plain-english/) to feel how useful it is: add an MCP server to a compatible client and _presto!_ – your agent gets new capabilities.
 
@@ -27,7 +31,7 @@ By default, MCP doesn't assume a prior relationship between the client (agent) d
 
 In plain terms, it means I can tell my agent to connect to `https://mcp.linear.com/mcp`, and the client can follow a standard connection flow even if that server has never heard of my agent before. My agent doesn't need to have _special_ code to handle Linear's MCP server - it just has code to connect to MCP servers _generally_.
 
-<img src="/img/post/mcp-open-world-vision/mcp-closed-vs-open-world.webp">
+<img src="/img/post/mcp-open-world-vision/mcp-closed-vs-open-world.webp" alt="Closed world (discovered in advance) vs open world (no prior relationship)">
 
 This is exactly how web browsers work! When you type `https://microsoft.com` into Chrome or Firefox, you expect to browse that site without pre-configuring anything. You just type the URL and go.
 
