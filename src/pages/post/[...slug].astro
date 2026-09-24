@@ -4,13 +4,42 @@ import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
   const posts = await getCollection("post", ({ data }) => !data.draft);
-  return posts.map((post) => ({
-    params: { slug: post.id },
-    props: { post },
-  }));
+  return posts.map((post) => {
+    const series = post.data.series;
+    const orderedSeries = series && !Array.isArray(series) ? series : undefined;
+    const seriesToc = orderedSeries
+      ? {
+          name: orderedSeries.name,
+          items: posts
+            .filter((candidate) => {
+              const candidateSeries = candidate.data.series;
+              return !Array.isArray(candidateSeries) && candidateSeries?.name === orderedSeries.name;
+            })
+            .sort((a, b) => {
+              const aSeries = !Array.isArray(a.data.series) ? a.data.series : undefined;
+              const bSeries = !Array.isArray(b.data.series) ? b.data.series : undefined;
+              return (aSeries?.order ?? 0) - (bSeries?.order ?? 0);
+            })
+            .map((seriesPost) => {
+              const seriesData = !Array.isArray(seriesPost.data.series) ? seriesPost.data.series : undefined;
+              return {
+                title: seriesPost.data.title,
+                href: `/post/${seriesPost.id}/`,
+                order: seriesData?.order ?? 0,
+                current: seriesPost.id === post.id,
+              };
+            }),
+        }
+      : undefined;
+
+    return {
+      params: { slug: post.id },
+      props: { post, seriesToc },
+    };
+  });
 }
 
-const { post } = Astro.props;
+const { post, seriesToc } = Astro.props;
 const { Content } = await render(post);
 ---
 
@@ -21,6 +50,7 @@ const { Content } = await render(post);
   ogImage={post.data.previewimage ?? post.data.postimage}
   ogImageAlt={post.data.previewimage ? post.data.previewimagealt : undefined}
   canonical={post.data.canonical}
+  series={seriesToc}
 >
   <Content />
 </PostLayout>

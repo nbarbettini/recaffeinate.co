@@ -9,7 +9,16 @@ const post = defineCollection({
     description: z.string().optional(),
     canonical: z.string().url().optional(),
     tags: z.array(z.string()).optional(),
-    series: z.array(z.string()).optional(),
+    series: z
+      .union([
+        // Legacy series metadata retained for older imported posts.
+        z.array(z.string()),
+        z.object({
+          name: z.string(),
+          order: z.number().int().nonnegative(),
+        }),
+      ])
+      .optional(),
     draft: z.boolean().optional().default(false),
     postimage: z.string().optional(),
     previewimage: z.string().optional(),

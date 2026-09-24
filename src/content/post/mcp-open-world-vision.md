@@ -3,18 +3,21 @@ title: "MCP's big, open-world vision"
 description: "Understanding why the protocol is for strangers and the critical role that extensions play"
 date: 2026-09-12T08:55:00-07:00
 tags: ["mcp"]
+series:
+  name: "Model Context Protocol explained"
+  order: 1
 canonical: "https://aaif.io/blog/mcp-big-open-world-vision"
 ---
 
-> This article was originally published on the [Agentic AI Foundation (AAIF) blog](https://aaif.io/blog/mcp-big-open-world-vision).
+_This article was originally published on the [Agentic AI Foundation (AAIF) blog](https://aaif.io/blog/mcp-big-open-world-vision)._
 
-You don't need to fully understand [how MCP works](/post/mcp-in-plain-english/) to feel how useful it is: add an MCP server to a compatible client and presto! – your agent gets new capabilities.
+You don't need to fully understand [how MCP works](/post/mcp-in-plain-english/) to feel how useful it is: add an MCP server to a compatible client and _presto!_ – your agent gets new capabilities.
 
 The ability to "paste a URL and go" is more foundational than it may appear. MCP's **big vision** is that clients and servers that have never met can talk to each other. A client developer shouldn’t need to build a custom integration for every server, and a server operator shouldn’t need to pre-register every client. Clients and servers can be strangers. The protocol gives strangers a shared way to connect, even when access still requires signing in, consent, or approval.
 
 I'll call these **open-world integrations**: connections where the client and server don't need a pre-existing relationship.
 
-This vision is sometimes misunderstood, because not all MCP servers actually need to handle clients that are strangers! In this post, I'll explain why MCP works this way, when MCP builders do (and don't) need to care, and what it means for the core protocol.
+This vision is sometimes misunderstood, because **not all** MCP servers actually need to handle clients that are strangers! In this post, I'll explain why MCP works this way, when MCP builders do (and don't) need to care, and what it means for the core protocol.
 
 ## No prior relationship, by default
 
@@ -64,11 +67,11 @@ Inside many enterprises that are adopting MCP, the integration problems are diff
 
 Some (or all) of the constraints that MCP solves for in the open world of the internet may not apply in the same way to intranets or closed enterprise environments. That's especially true when you control both sides (client and server) of the MCP connection. An enterprise can also use open-world integrations; what matters is which relationships can be assumed:
 
-| | Open world (default) | Closed world |
-|---|---|---|
-| Prior relationship | Not required | Arranged in advance |
-| Shared identity or access-control system | Not assumed | Often provided by the organization |
-| What a connection can rely on | Only the shared protocol, without prior coordination | The shared protocol plus arrangements made in advance |
+|                                          | Open world (default)                                 | Closed world                                          |
+| ---------------------------------------- | ---------------------------------------------------- | ----------------------------------------------------- |
+| Prior relationship                       | Not required                                         | Arranged in advance                                   |
+| Shared identity or access-control system | Not assumed                                          | Often provided by the organization                    |
+| What a connection can rely on            | Only the shared protocol, without prior coordination | The shared protocol plus arrangements made in advance |
 
 If you're building in a more closed environment, designing for strangers may feel like overkill. You might be right, especially when one or both sides of the connection are pre-configured! The questions that strangers need to ask each other may already have known answers inside your company. In that case, you have more flexibility to choose security and authorization patterns that make sense for your system.
 
@@ -76,7 +79,7 @@ For example, MCP supports client pre-registration, and MCP extensions like [Ente
 
 Keeping both kinds of environments in mind matters when we're deciding what belongs in the core protocol. A custom client you've built might already know about your company's identity provider, or send special headers to your enterprise gateway. A client built by someone who's never heard of your company won't know any of that.
 
-So when someone proposes a new requirement for MCP, I like to ask: *What is a general-purpose client meant to do with this?*
+So when someone proposes a new requirement for MCP, I like to ask: **What is a general-purpose client meant to do with this?**
 
 If the answer starts with "First, configure the client for our environment...", that might be a useful feature for your deployment! But it can't be a prerequisite for _every_ MCP integration. The core protocol needs to work by default when those arrangements haven't happened. [Extensions](https://modelcontextprotocol.io/extensions/overview) give developers a way to build on those extra arrangements without forcing everyone else to share them.
 
