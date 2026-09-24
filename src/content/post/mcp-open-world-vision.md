@@ -9,7 +9,7 @@ series:
 canonical: "https://aaif.io/blog/mcp-big-open-world-vision"
 ---
 
-_This article was originally published on the [Agentic AI Foundation (AAIF) blog](https://aaif.io/blog/mcp-big-open-world-vision)._
+_This article was originally published on the [Agentic AI Foundation blog](https://aaif.io/blog/mcp-big-open-world-vision)._
 
 You don't need to fully understand [how MCP works](/post/mcp-in-plain-english/) to feel how useful it is: add an MCP server to a compatible client and _presto!_ – your agent gets new capabilities.
 
