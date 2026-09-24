@@ -8,13 +8,21 @@ interface Props {
   ogImage?: string;
   ogImageAlt?: string;
   ogType?: "website" | "article";
+  canonical?: string;
 }
 
-const { title, description = "the blog and website of Nate Barbettini", ogImage, ogImageAlt, ogType = "website" } = Astro.props;
+const {
+  title,
+  description = "the blog and website of Nate Barbettini",
+  ogImage,
+  ogImageAlt,
+  ogType = "website",
+  canonical,
+} = Astro.props;
 const siteTitle = "caffeinate";
 const isHome = title === siteTitle;
 const pageTitle = isHome ? `${siteTitle}, ${description}` : title;
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const canonicalURL = canonical ? new URL(canonical) : new URL(Astro.url.pathname, Astro.site);
 const sharingOrigin = import.meta.env.SHARING_ORIGIN;
 const sharingURL = new URL(Astro.url.pathname, sharingOrigin);
 // Identify local assets against the canonical site before selecting their public origin.

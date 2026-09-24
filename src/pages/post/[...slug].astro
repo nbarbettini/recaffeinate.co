@@ -20,6 +20,7 @@ const { Content } = await render(post);
   description={post.data.description}
   ogImage={post.data.previewimage ?? post.data.postimage}
   ogImageAlt={post.data.previewimage ? post.data.previewimagealt : undefined}
+  canonical={post.data.canonical}
 >
   <Content />
 </PostLayout>
