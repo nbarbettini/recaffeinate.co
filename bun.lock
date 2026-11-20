@@ -5,6 +5,7 @@
       "name": "caffeinate.blog",
       "dependencies": {
         "@astrojs/cloudflare": "^12.6.12",
+        "@astrojs/markdown-remark": "^6.3.10",
         "@astrojs/mdx": "^4.3.13",
         "@astrojs/rss": "^4.0.15",
         "astro": "^5.17.1",

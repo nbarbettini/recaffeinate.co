@@ -23,6 +23,7 @@ export default defineConfig({
   adapter: cloudflare({ imageService: "compile" }),
   integrations: [mdx()],
   markdown: {
+    remarkRehype: { footnoteLabel: "Notes" },
     shikiConfig: {
       theme: "github-light",
     },
