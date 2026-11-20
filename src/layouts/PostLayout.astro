@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
 import SeriesToc from "../components/SeriesToc.astro";
+import Footnotes from "../components/Footnotes.astro";
 
 interface SeriesItem {
   title: string;
@@ -52,6 +53,8 @@ const formattedDate = date.toLocaleDateString("en-US", {
     </section>
   </article>
 </BaseLayout>
+
+<Footnotes />
 
 <script>
   const blocks = document.querySelectorAll<HTMLElement>(

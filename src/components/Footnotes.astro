@@ -1,0 +1,184 @@
+<script>
+  const references = document.querySelectorAll<HTMLAnchorElement>(".post-content [data-footnote-ref]");
+
+  if (references.length) {
+    const preview = document.createElement("aside");
+    preview.className = "footnote-preview";
+    preview.id = "footnote-preview";
+    preview.tabIndex = -1;
+    preview.hidden = true;
+    document.body.append(preview);
+
+    let active: HTMLAnchorElement | null = null;
+    let closeTimer: ReturnType<typeof setTimeout>;
+    let originalDescription: string | null = null;
+
+    function cancelClose() {
+      clearTimeout(closeTimer);
+    }
+
+    function close() {
+      cancelClose();
+      if (active) {
+        if (preview.contains(document.activeElement)) active.focus({ preventScroll: true });
+        if (originalDescription) active.setAttribute("aria-describedby", originalDescription);
+        else active.removeAttribute("aria-describedby");
+      }
+      active = null;
+      preview.hidden = true;
+    }
+
+    function scheduleClose() {
+      cancelClose();
+      closeTimer = setTimeout(() => {
+        if (!active?.matches(":hover") && document.activeElement !== active && !preview.contains(document.activeElement) && !preview.matches(":hover")) close();
+      }, 450);
+    }
+
+    function position() {
+      if (!active) return;
+      const anchor = active.getBoundingClientRect();
+      const gap = 4;
+      const margin = 12;
+      const height = preview.offsetHeight;
+      const below = window.innerHeight - anchor.bottom - gap - margin;
+      const above = anchor.top - gap - margin;
+      const useBelow = height <= below || below >= above;
+      preview.style.maxHeight = `${Math.max(0, useBelow ? below : above)}px`;
+      preview.style.left = `${Math.max(margin, Math.min(anchor.left, window.innerWidth - preview.offsetWidth - margin))}px`;
+      preview.style.top = `${useBelow ? anchor.bottom + gap : Math.max(margin, anchor.top - gap - preview.offsetHeight)}px`;
+    }
+
+    function open(reference: HTMLAnchorElement) {
+      cancelClose();
+      if (active === reference) return;
+      const note = document.getElementById(decodeURIComponent(reference.hash.slice(1)));
+      if (!note) return;
+      close();
+      active = reference;
+      originalDescription = reference.getAttribute("aria-describedby");
+      const content = note.cloneNode(true) as HTMLElement;
+      content.querySelectorAll("[data-footnote-backref]").forEach((link) => link.remove());
+      content.querySelectorAll("[id]").forEach((element) => element.removeAttribute("id"));
+      preview.replaceChildren(...Array.from(content.childNodes));
+      preview.setAttribute("aria-label", `Note ${reference.textContent}`);
+      reference.setAttribute("aria-describedby", preview.id);
+      preview.style.maxHeight = "";
+      preview.hidden = false;
+      position();
+    }
+
+    // Keep Enter/click/tap as ordinary endnote navigation, including without JS.
+    references.forEach((reference) => {
+      reference.addEventListener("pointerenter", (event) => {
+        if (event.pointerType === "mouse" || event.pointerType === "pen") open(reference);
+      });
+      reference.addEventListener("pointerleave", scheduleClose);
+      reference.addEventListener("focus", () => open(reference));
+      reference.addEventListener("blur", scheduleClose);
+      reference.addEventListener("click", close);
+    });
+    preview.addEventListener("pointerenter", cancelClose);
+    preview.addEventListener("pointerleave", scheduleClose);
+    preview.addEventListener("focusin", cancelClose);
+    preview.addEventListener("focusout", scheduleClose);
+
+    document.addEventListener("keydown", (event) => {
+      if (!active) return;
+      if (event.key === "Escape") {
+        const reference = active;
+        const focusInPreview = preview.contains(document.activeElement);
+        if (focusInPreview) reference.focus();
+        close();
+        event.preventDefault();
+      } else if (event.key === "Tab") {
+        const links = Array.from(preview.querySelectorAll<HTMLAnchorElement>("a[href]"));
+        if (document.activeElement === active && !event.shiftKey) {
+          event.preventDefault();
+          (links[0] ?? preview).focus();
+        } else if (preview.contains(document.activeElement)) {
+          if (event.shiftKey && (document.activeElement === links[0] || document.activeElement === preview)) {
+            event.preventDefault();
+            active.focus();
+          } else if (!event.shiftKey && (document.activeElement === links.at(-1) || document.activeElement === preview)) {
+            // Resume the page's tab order immediately after the original reference.
+            active.focus();
+            close();
+          }
+        }
+      }
+    });
+    document.addEventListener("pointerdown", (event) => {
+      if (event.target instanceof Node && !preview.contains(event.target) && event.target !== active) close();
+    });
+    window.addEventListener("resize", close);
+    window.addEventListener("scroll", (event) => {
+      if (event.target === preview || !active) return;
+      const anchor = active.getBoundingClientRect();
+      if (anchor.bottom < 0 || anchor.top > window.innerHeight) close();
+      else position();
+    }, true);
+  }
+</script>
+
+<style is:global>
+  .post-content [data-footnote-ref] {
+    /* Enlarge the hit area without adding height to the surrounding line. */
+    display: inline-block;
+    padding: 0.45em 0.35em;
+    margin-block: -0.3em;
+    line-height: 1;
+    font-family: "Open Sans", sans-serif;
+    font-size: 0.85em;
+    white-space: nowrap;
+  }
+  .post-content [data-footnote-ref]::before { content: "["; }
+  .post-content [data-footnote-ref]::after { content: "]"; }
+  .post-content [data-footnote-ref]:focus-visible,
+  .post-content [data-footnote-backref]:focus-visible,
+  .footnote-preview :focus-visible,
+  .footnote-preview:focus-visible {
+    outline: 2px solid #c56a00;
+    outline-offset: 3px;
+    border-radius: 3px;
+  }
+  .post-content [data-footnotes] {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e8e1d8;
+    font-size: 0.9em;
+  }
+  .post-content [data-footnotes] h2 {
+    margin: 0 0 1rem;
+    font-size: 1.15rem;
+  }
+  .post-content [data-footnotes] li { padding-left: 0.3rem; scroll-margin-top: 2rem; }
+  .post-content [data-footnotes] li:target { background: #fff7ec; }
+  .post-content [data-footnotes] p { margin: 0.65em 0; }
+  .post-content [data-footnote-ref] { scroll-margin-top: 2rem; }
+  .post-content [data-footnote-backref] { padding: 0.25em; }
+  .footnote-preview {
+    position: fixed;
+    z-index: 100;
+    width: min(25rem, calc(100vw - 24px));
+    max-height: calc(100dvh - 24px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 1rem 1.25rem;
+    border: 1px solid #e8e1d8;
+    border-radius: 8px;
+    background: #fff;
+    color: #3a4145;
+    box-shadow: 0 6px 24px rgb(45 52 54 / 12%);
+    font-size: 0.9rem;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+  }
+  .footnote-preview p { margin: 0.75em 0; }
+  .footnote-preview > :first-child { margin-top: 0; }
+  .footnote-preview > :last-child { margin-bottom: 0; }
+  @media print {
+    .footnote-preview { display: none !important; }
+    .post-content [data-footnote-backref] { display: none; }
+  }
+</style>
